@@ -1,0 +1,81 @@
+<svg
+    id="sankey"
+    [attr.viewBox]="
+        '-25 0 ' +
+        (this.width + this.marginLeft + this.marginRight) +
+        ' ' +
+        (this.height + this.marginTop + this.marginBottom)
+    "
+    preserveAspectRatio="xMidYMid meet"
+>
+    <g id="sankeyAxis"></g>
+    <g id="sankeyG">
+        <rect
+            class="chart-nodes"
+            *ngFor="let node of nodes"
+            [attr.x]="node.x0"
+            [attr.y]="node.y0"
+            [attr.height]="node.y1 - node.y0"
+            [attr.width]="node.x1 - node.x0"
+            [attr.fill]="sankeyNodes()"
+        ></rect>
+    </g>
+    <g fill="none">
+        <path
+            class="chart-links"
+            *ngFor="let link of links"
+            [attr.stroke]="sankeyFill(link)"
+            [attr.d]="sankeyLinkHorizontal()(link)"
+            [attr.stroke-width]="link.width"
+        ></path>
+    </g>
+    <!-- <g>
+          <text
+            class="chart-name"
+            fill="black"
+            *ngFor="let label of nodes"
+            [attr.x]="xLabel(label)"
+            [attr.y]="yLabel(label)"
+            [attr.text-anchor]="labelAnchor(label)"
+            dy="0.35em"
+          >
+            {{ label.name }}
+          </text>
+          <text
+            class="name"
+            style="font:14px 'Univers LT W04_59 Ult Cond'"
+            fill="black"
+            opacity=".2"
+            x="0"
+            y="395"
+            text-anchor="left"
+            dy="0.35em"
+          >
+            1. Current move
+          </text>
+          <text
+            class="name"
+            style="font:14px 'Univers LT W04_59 Ult Cond'"
+            fill="black"
+            x="207"
+            y="395"
+            opacity=".2"
+            text-anchor="left"
+            dy="0.35em"
+          >
+            2.
+          </text>
+          <text
+            class="name"
+            style="font:14px 'Univers LT W04_59 Ult Cond'"
+            fill="black"
+            x="387"
+            y="395"
+            opacity=".2"
+            text-anchor="left"
+            dy="0.35em"
+          >
+            3.
+          </text>
+        </g> -->
+</svg>

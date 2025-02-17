@@ -1,0 +1,16 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import './base/resets';
+@import './utils/variables.scss';
+@import './utils/mixins.scss';
+@import '@angular/material/theming';
+
+@import './content/content.scss';
+@import './content/main.scss';
+@import './content/chart.scss';
+@import './content/scroll.scss';
+@import './content/table.scss';
+@import './nav/nav.scss';
+@import './mat.scss';
+
+@import './base/base.scss';
+@import './base/fonts.scss';

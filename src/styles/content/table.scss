@@ -1,0 +1,56 @@
+table,
+thead,
+tbody,
+th,
+td {
+    font-size: 14px;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: rgba($color-grey, 0.25);
+    padding: 6px 0px 6px 0px;
+    line-height: 1.5;
+}
+.chart-table td,
+.chart-table th {
+    font-size: 14px;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: rgba($color-grey, 0.25);
+    // text-align: right;
+    line-height: 1.5;
+    padding: 6px 0px 6px 0px;
+    text-align: right;
+}
+.chart-table td:first-child {
+    text-align: left;
+    width: 500px;
+}
+.chart-table th:first-child {
+    text-align: left;
+    width: 500px;
+}
+table {
+    table-layout: fixed;
+    width: 100%;
+    margin: 16px 0px 64px 0px;
+}
+th {
+    width: auto;
+    font-family: $font-montserrat-bold;
+    color: $color-dark-green;
+    text-align: left;
+}
+td {
+    font-family: $font-montserrat-medium;
+    width: auto;
+}
+// td:first-child{
+//     color: $color-dark-green;
+// }
+.content-table-title {
+    font-family: $font-montserrat-medium;
+    color: $color-dark-green;
+    font-size: 14px;
+    line-height: 1.25;
+    margin: 14px 0px 14px 0px;
+}
