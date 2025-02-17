@@ -31,7 +31,6 @@ import { OperationsComponent } from './operations/operations.component';
 // import { ProgramRaceComponent } from './program-race/program-race.component';
 import { ParticipationTableComponent } from './participation-table/participation-table.component';
 import { ParticipationComponent } from './participation/participation.component';
-import { SankeyComponent } from './sankey/sankey.component';
 import { ServiceTableComponent } from './service-table/service-table.component';
 import { ServiceComponent } from './service/service.component';
 import { SummerParticipationTableComponent } from './summer-participation-table/summer-participation-table.component';
@@ -40,10 +39,8 @@ import { SummerParticipationComponent } from './summer-participation/summer-part
 @NgModule({
     declarations: [
         AppComponent,
-        SankeyComponent,
         OperationsComponent,
         ServiceComponent,
-        SankeyComponent,
         ParticipationComponent,
         ParticipationTableComponent,
         OperationsTableComponent,
