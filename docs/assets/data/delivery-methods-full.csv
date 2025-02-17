@@ -1,0 +1,5 @@
+﻿Factor,Min,Max,MaxDiff,SFAs,SFSP_Sponsors,Institutions
+Curbside pick-up/ drive through service,0.25,0.54,0.29,0.42,0.47,0.25
+"Walk-up sites at schools, centers, or other buildings",0.31,0.63,0.32,0.63,0.6,0.31
+Mobile sites at which a bus or van delivers meals at pre-set times,0.02,0.11,0.09,0.09,0.11,0.02
+Delivery with stops at individual homes ,0.04,0.06,0.02,0.05,0.06,0.04
