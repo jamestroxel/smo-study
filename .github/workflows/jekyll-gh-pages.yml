@@ -38,7 +38,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist/smo-study/browser'
+          path: './docs/smo-study/browser'
   # Deployment job
   deploy:
     environment:
