@@ -67,7 +67,7 @@
               "namedChunks": true
             },
             "gh-pages": {
-              "baseHref": "https://jamestroxel.github.io/smo-study/"
+              "baseHref": "/jamestroxel.github.io/smo-study/"
             }
           },
           "defaultConfiguration": "production"
