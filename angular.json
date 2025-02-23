@@ -65,6 +65,9 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "gh-pages": {
+              "baseHref": "https://jamestroxel.github.io/smo-study/"
             }
           },
           "defaultConfiguration": "production"
