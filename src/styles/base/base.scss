@@ -1,0 +1,7 @@
+body {
+    @extend %cover;
+    font-family: $font-montserrat-regular;
+}
+html {
+    @extend %cover;
+}

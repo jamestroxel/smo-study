@@ -1,0 +1,9 @@
+.content-scroll-container {
+    @extend %cover;
+    display: grid;
+    grid-template-columns: [start] 40px [second] 1fr [fourth] 1.25fr [fifth] 1fr [sixth] 40px [end];
+    grid-template-rows: [row1] 40px [rowMain] 1fr [row3] 40px [last-line];
+    column-gap: 40px;
+    position: fixed;
+    top: 0;
+}

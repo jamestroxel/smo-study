@@ -1,0 +1,125 @@
+.nav-container {
+    @extend %cover;
+    // top: 0;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
+    background-color: white;
+}
+
+.nav-button-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    margin: 23px 16px;
+    mix-blend-mode: difference;
+}
+.nav-toggler {
+    position: absolute;
+    // display: block;
+    align-self: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    left: 0;
+    width: 26px;
+    height: 32px;
+    transition: 0.3s ease;
+    mix-blend-mode: difference;
+    cursor: pointer;
+}
+.nav-toggler span {
+    border-radius: 4px;
+    position: absolute;
+    display: block;
+    width: 100%;
+    left: 0;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s ease;
+    transform-origin: center;
+    mix-blend-mode: difference;
+}
+
+.nav-toggler span:nth-child(1) {
+    top: 26%;
+}
+
+.nav-toggler span:nth-child(2) {
+    height: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.nav-toggler span:nth-child(3) {
+    height: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-toggler span:nth-child(4) {
+    bottom: 26%;
+}
+
+.nav-toggler.drawer-open span:nth-child(1) {
+    top: 50%;
+    left: 50%;
+    width: 0%;
+    opacity: 0;
+}
+
+.nav-toggler.drawer-open span:nth-child(2) {
+    height: 4px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    opacity: 1;
+}
+
+.nav-toggler.drawer-open span:nth-child(3) {
+    height: 4px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.nav-toggler.drawer-open span:nth-child(4) {
+    bottom: 50%;
+    left: 50%;
+    width: 0%;
+    opacity: 0;
+}
+.nav-sublevel1 {
+    padding: 0px 0px 0px 0px;
+}
+.nav-menu {
+    font-family: $font-montserrat-light;
+    color: white;
+    margin-top: 28px;
+    font-size: 8px;
+    text-align: center;
+    font-kerning: normal;
+}
+.nav-back2top {
+    position: fixed;
+    mix-blend-mode: difference;
+    bottom: 0;
+    right: 0;
+    // opacity: 0;
+    margin: 0px 40px 40px 0px;
+}
+.nav-copyright-wrapper {
+    display: flex;
+    position: fixed;
+    mix-blend-mode: difference;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    // margin: 0px 80px 32px 0px;
+}
+.nav-copyright {
+    font-family: $font-montserrat-light;
+    color: white;
+    font-size: 10px;
+    transform: rotate(90deg);
+    align-self: center;
+}

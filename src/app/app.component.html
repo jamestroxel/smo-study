@@ -1,0 +1,3167 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav
+        #sidenav
+        mode="over"
+        [(opened)]="opened"
+        (opened)="events.push('open!')"
+        (closed)="events.push('close!')"
+        (mouseleave)="sidenav.toggle()"
+    >
+        <h1 class="content-main-TOC-heading1">Table of Contents</h1>
+        <h2 class="content-main-TOC-heading2">Chapters</h2>
+        <button mat-button (click)="onNavLinkClicked($event, ExSum)">
+            <span class="content-main-body-bold">Exective Summary</span>
+        </button>
+        <button
+            mat-button
+            matTooltipClass="tooltip"
+            mat-button
+            matTooltip="Introduction"
+            aria-label="Introduction"
+            matTooltipPosition="right"
+            (click)="onNavLinkClicked($event, Ch1)"
+        >
+            <span class="content-main-body-bold">Chapter I</span>
+        </button>
+        <button
+            matTooltipClass="tooltip"
+            mat-button
+            matTooltip="Child Nutrition Program Participation and Meals Served"
+            aria-label="Child Nutrition Program Participation and Meals Served"
+            matTooltipPosition="right"
+            (click)="onNavLinkClicked($event, Ch2)"
+        >
+            <span class="content-main-body-bold">Chapter II</span>
+        </button>
+        <button
+            matTooltipClass="tooltip"
+            mat-button
+            matTooltip="Program Operations and Financial Challenges During the Pandemic"
+            aria-label="Program Operations and Financial Challenges During the Pandemic"
+            matTooltipPosition="right"
+            (click)="onNavLinkClicked($event, Ch3)"
+        >
+            <span class="content-main-body-bold">Chapter III</span>
+        </button>
+        <button
+            matTooltipClass="tooltip"
+            mat-button
+            matTooltip="Use of COVID-19 Child Nutrition Nationwide Waivers to Improve Services to Children"
+            aria-label="Use of COVID-19 Child Nutrition Nationwide Waivers to Improve Services to Children"
+            matTooltipPosition="right"
+            (click)="onNavLinkClicked($event, Ch4)"
+        >
+            <span class="content-main-body-bold">Chapter IV</span>
+        </button>
+        <button
+            matTooltipClass="tooltip"
+            mat-button
+            matTooltip="Overview of the Next Study in the Series"
+            aria-label="Overview of the Next Study in the Series"
+            matTooltipPosition="right"
+            (click)="onNavLinkClicked($event, Ch5)"
+        >
+            <span class="content-main-body-bold">Chapter V</span>
+        </button>
+        <button
+            matTooltipClass="tooltip"
+            mat-button
+            matTooltip="References and Citations"
+            aria-label="References and Citations"
+            matTooltipPosition="right"
+            (click)="onNavLinkClicked($event, Refs)"
+        >
+            <span class="content-main-body-bold">References</span>
+        </button>
+        <h2 class="content-main-TOC-heading2">Figures</h2>
+        <button
+            matTooltipClass="tooltip"
+            mat-button
+            matTooltip="Child participation, January-September 2020"
+            aria-label="Child participation, January-September 2020"
+            matTooltipPosition="right"
+            (click)="onNavLinkClicked($event, FigII1)"
+        >
+            <span class="nav-sublevel1">Figure II.1</span>
+        </button>
+        <button
+            matTooltipClass="tooltip"
+            mat-button
+            matTooltip="Meals and snacks/supplements served, January-September 2020"
+            aria-label="Meals and snacks/supplements served, January-September 2020"
+            matTooltipPosition="right"
+            (click)="onNavLinkClicked($event, FigII2)"
+        >
+            <span class="nav-sublevel1">Figure II.2</span>
+        </button>
+        <button
+            matTooltipClass="tooltip"
+            mat-button
+            matTooltip="Number of children participating in SSO and SFSP, July 2019 and July 2020"
+            aria-label="Number of children participating in SSO and SFSP, July 2019 and July 2020"
+            matTooltipPosition="right"
+            (click)="onNavLinkClicked($event, FigII3)"
+        >
+            <span class="nav-sublevel1">Figure II.3</span>
+        </button>
+        <button
+            matTooltipClass="tooltip"
+            mat-button
+            matTooltip="Percentage of State agencies reporting factors that contributed to local program operators' operational challenges providing meal service, March–September 2020"
+            aria-label="Percentage of State agencies reporting factors that contributed to local program operators' operational challenges providing meal service, March–September 2020"
+            matTooltipPosition="right"
+            (click)="onNavLinkClicked($event, FigIII1)"
+        >
+            <span class="nav-sublevel1">Figure III.1</span>
+        </button>
+        <button
+            matTooltipClass="tooltip"
+            mat-button
+            matTooltip="Percentage of State agencies reporting factors that contributed to local program operators' financial challenges providing meal service, March–September 2020"
+            aria-label="Percentage of State agencies reporting factors that contributed to local program operators' financial challenges providing meal service, March–September 2020"
+            matTooltipPosition="right"
+            (click)="onNavLinkClicked($event, FigIII2)"
+        >
+            <span class="nav-sublevel1">Figure III.2</span>
+        </button>
+        <button
+            matTooltipClass="tooltip"
+            mat-button
+            matTooltip="Percentage of State agencies reporting that the majority of local program operators established meal sites with certain characteristics, March–September 2020"
+            aria-label="Percentage of State agencies reporting that the majority of local program operators established meal sites with certain characteristics, March–September 2020"
+            matTooltipPosition="right"
+            (click)="onNavLinkClicked($event, FigIV1)"
+        >
+            <span class="nav-sublevel1">Figure IV.1</span>
+        </button>
+        <button
+            matTooltipClass="tooltip"
+            mat-button
+            matTooltip="Percentage of State agencies in which local program operators used the Meal Pattern Flexibility waiver to waive meal component requirements in each Child Nutrition Program, March–September 2020"
+            aria-label="Percentage of State agencies in which local program operators used the Meal Pattern Flexibility waiver to waive meal component requirements in each Child Nutrition Program, March–September 2020"
+            matTooltipPosition="right"
+            (click)="onNavLinkClicked($event, FigIV2)"
+        >
+            <span class="nav-sublevel1">Figure IV.2</span>
+        </button>
+        <button
+            matTooltipClass="tooltip"
+            mat-button
+            matTooltip="Percentage of State agencies reporting that access-focused waivers improved services to children in certain ways, March–September 2020"
+            aria-label="Percentage of State agencies reporting that access-focused waivers improved services to children in certain ways, March–September 2020"
+            matTooltipPosition="right"
+            (click)="onNavLinkClicked($event, FigIV3)"
+        >
+            <span class="nav-sublevel1">Figure IV.3</span>
+        </button>
+    </mat-sidenav>
+
+    <mat-sidenav-content (scroll)="onScroll($event)">
+        <div #toggle class="nav-button-bg" (click)="sidenav.toggle()">
+            <div
+                class="nav-toggler"
+                id="nav-toggler"
+                (click)="toggleNavDrawer(!isDrawerOpen)"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <p class="nav-menu">MENU</p>
+            </div>
+        </div>
+        <main id="content" class="content-wrapper">
+            <section class="content-top">
+                <div #image class="content-hero-wrapper">
+                    <img
+                        class="content-hero"
+                        src="../assets/images/patrick-schopflin-hEQpoeUuJXA-unsplash.jpg"
+                    />
+                </div>
+                <div class="content-title-container">
+                    <div class="content-logo-wrapper">
+                        <img
+                            class="content-title-logo"
+                            src="../assets/images/fns-white-lockup.svg"
+                        />
+                        <img
+                            class="content-title-logo"
+                            src="../assets/images/Registered_Horz_Tag_white.svg"
+                        />
+                    </div>
+
+                    <h1 class="content-title">
+                        Game Changer
+                    </h1>
+                    <h2 class="content-subtitle">
+                        How FNS Rewrote the School Lunch Playbook During the COVID-19 Pandemic
+                        <span style="color: '#f1b51c'">|</span> Year 1 Report
+                    </h2>
+                    <p class="content-title-citation-bold">May 23, 2023</p>
+                    <p class="content-title-citation">
+                        Veronica Severn, Liana Washburn, Rachel Frisk, and Kevin
+                        Conway
+                    </p>
+                </div>
+                <p class="content-title-prompt">
+                    Scroll down to read more
+                    <span class="content-title-citation-arrow">&darr;</span>
+                </p>
+            </section>
+            <section class="content-main-intro">
+                <div class="content-main-container">
+                    <h1 #ExSum class="content-main-heading1">
+                        Executive Summary
+                    </h1>
+                    <p class="content-main-body">
+                        The U.S. Department of Agriculture, Food and Nutrition
+                        Service's (FNS) Child Nutrition Programs help ensure
+                        that children in low-income families do not go hungry
+                        and have access to safe, nutritious foods at schools and
+                        in other settings. The National School Lunch Program
+                        (NSLP) and the School Breakfast Program (SBP) are the
+                        largest Child Nutrition Programs. FNS oversees these
+                        programs, and State agencies administer them through
+                        agreements with local School Food Authorities that
+                        implement the programs in schools.
+                    </p>
+                    <p class="content-main-body">
+                        FNS assesses school meal operations on a school-year
+                        basis with a study series that was modified in School
+                        Year (SY) 2020-2021 because of the start of the COVID-19
+                        pandemic public health emergency—the largest nationwide
+                        disruption of school meals programs since they were
+                        enacted. When the pandemic began in March 2020, the
+                        Families First Coronavirus Response Act provided FNS
+                        with the authority to establish waivers for the purpose
+                        of providing meals under the Child Nutrition Programs
+                        with appropriate safety measures. With this authority,
+                        FNS issued nationwide waivers of certain program rules
+                        that provided States and local program operators with
+                        flexibilities to help them serve meals to children who
+                        were no longer routinely being educated in school
+                        buildings due to the pandemic. The key Child Nutrition
+                        Programs used to provide meals to children during the
+                        early pandemic months included the NSLP, SBP, NSLP
+                        Seamless Summer Option (SSO), Summer Food Service
+                        Program (SFSP), and Child and Adult Care Food Program
+                        (CACFP).
+                    </p>
+                    <p class="content-main-body">
+                        Data collection for this report focused on gathering
+                        information from State agencies about Child Nutrition
+                        Program operations during March through September 2020,
+                        including information on the COVID-19 Child Nutrition
+                        nationwide waivers that FNS approved for use during that
+                        period.
+                    </p>
+                    <p class="content-main-body">
+                        Findings for March through September 2020 include:
+                    </p>
+                    <ul class="content-main-body-list">
+                        <li class="content-main-body-list-item">
+                            <span
+                                >The number of children served meals decreased
+                                substantially in the spring of 2020; however, a
+                                significantly greater number of children
+                                received meals in summer 2020 than in previous
+                                summers</span
+                            >
+                        </li>
+                        <li class="content-main-body-list-item">
+                            <span
+                                >By September 2020, Child Nutrition Programs
+                                were serving more meals to more children</span
+                            >
+                        </li>
+                        <li class="content-main-body-list-item">
+                            <span
+                                >State agencies consistently reported that use
+                                of the COVID-19 Child Nutrition nationwide
+                                waivers improved services to children</span
+                            >
+                        </li>
+                        <li class="content-main-body-list-item">
+                            <span
+                                >State agencies and local program operators more
+                                frequently used the COVID-19 Child Nutrition
+                                nationwide waivers for SSO and SFSP than for
+                                NSLP, SBP, and CACFP from March through
+                                September 2020</span
+                            >
+                        </li>
+                        <li class="content-main-body-list-item">
+                            <span
+                                >Meal service generally moved outside of school
+                                and daycare buildings to meal sites in locations
+                                near children's homes or where more children
+                                participated in Child Nutrition Programs, during
+                                this period</span
+                            >
+                        </li>
+                        <li class="content-main-body-list-item">
+                            <span
+                                >Operators used a variety of new and alternative
+                                meal delivery methods and options to serve
+                                children</span
+                            >
+                        </li>
+                        <li class="content-main-body-list-item">
+                            <span
+                                >The pandemic presented new operational and
+                                financial challenges for States and local
+                                program operators</span
+                            >
+                        </li>
+                    </ul>
+                    <h3 #Ch1 class="content-main-subheading">Chapter I</h3>
+                    <h1 class="content-main-heading1">Introduction</h1>
+                    <p class="content-main-body">
+                        The School Meals Operations Study (SMO) is part of an
+                        ongoing study series to assess school meal operations on
+                        a school-year basis. When the COVID-19 pandemic public
+                        health emergency began in March 2020, the scope of this
+                        study was modified starting with school year (SY)
+                        2019-2020 to to focus on gathering information about
+                        Child Nutrition Program operations and statutorily
+                        required information on the COVID-19 Child Nutrition
+                        nationwide waivers approved by FNS to provide States and
+                        local program operators with flexibilities to help them
+                        serve meals to children during the pandemic.
+                    </p>
+                    <p class="content-main-body">
+                        This report describes key findings from the first year
+                        of the School Meals Operations Study (SMO), including
+                        findings related to Child Nutrition Program
+                        participation and meals served, operational and
+                        financial challenges State agencies and local program
+                        operators experienced during the pandemic, and the use
+                        of COVID-19 Child Nutrition nationwide waivers including
+                        the effects of the waivers on services to children.
+                    </p>
+                    <h2 class="content-main-heading2">Background</h2>
+                    <p class="content-main-body">
+                        The U.S. Department of Agriculture (USDA) Food and
+                        Nutrition Service's (FNS) Child Nutrition Programs help
+                        ensure that children in low-income families do not go
+                        hungry and have access to safe, nutritious foods at
+                        school and in other settings. These include the school
+                        meals programs, which include the National School Lunch
+                        Program (NSLP) and the School Breakfast Program (SBP),
+                        the summer meal programs, which are the NSLP Seamless
+                        Summer Option (SSO) and the Summer Food Service Program
+                        (SFSP), and the Child and Adult Care Food Program
+                        (CACFP). Over the decade preceding the COVID-19
+                        pandemic, the largest of these programs, the NSLP,
+                        served approximately 5 billion meals to about 30 million
+                        children annually.
+                    </p>
+                    <p class="content-main-body">
+                        FNS oversees these programs, and State agencies
+                        administer them through agreements with local program
+                        operators, such as School Food Authorities (SFAs). FNS
+                        requires information about program operations to
+                        effectively oversee the programs and inform current and
+                        future policy decisions.
+                    </p>
+                    <p class="content-main-body">
+                        FNS has an ongoing study series to assess school meal
+                        operations on a school-year basis. Topics studied by the
+                        series include school and site participation, student
+                        and child participation, and meal counting.
+                    </p>
+                    <p class="content-main-body">
+                        The scope of the study series was modified starting with
+                        SY 2019-2020 due to the start of the COVID-19 pandemic
+                        public health emergency. When the pandemic began in
+                        March 2020, the Families First Coronavirus Response Act
+                        (FFCRA) provided FNS with the authority to establish
+                        waivers for the purpose of providing meals under the
+                        Child Nutrition Programs with appropriate safety
+                        measures. With this authority, FNS issued nationwide
+                        waivers of certain Child Nutrition Program rules that
+                        provided States and local program operators with
+                        flexibilities to help them serve meals to children who
+                        were no longer routinely being educated in school
+                        buildings due to the pandemic
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf"
+                            target="_blank"
+                            >(Appendix A)</a
+                        >.
+                    </p>
+                    <p class="content-main-body">
+                        The programs used to provide meals to children during
+                        the early pandemic months included NSLP, SBP, SSO, SFSP,
+                        and CACFP. SSO and SFSP are traditionally associated
+                        with summer meal service, but these programs are also
+                        used to provide meal service during unanticipated school
+                        closures, such as those related to weather events and
+                        other emergencies. SFAs implement NSLP and SBP in
+                        schools, and they implement SSO at a variety of sites,
+                        including schools, summer camps, and other locations.
+                        Sponsors, which may include SFAs, implement SFSP at a
+                        similar range of site types. Institutions implement
+                        CACFP at child care outlets, including child care
+                        centers and family day care homes.
+                    </p>
+                    <p class="content-main-body">
+                        Data collection for this report focused on gathering
+                        information about Child Nutrition Program operations
+                        from March through September 2020, including meal
+                        service and challenges, as well as statutorily required
+                        information on the COVID-19 Child Nutrition nationwide
+                        waivers approved for use during that period.
+                        Specifically, the FFCRA required that State agencies
+                        using each waiver report to FNS on (1) use of the waiver
+                        by the State agency and local program operators, and (2)
+                        whether and how the waiver resulted in improved services
+                        to program participants. For certain waivers, FNS
+                        identified specific actions that State agencies and
+                        local program operators using the waivers were required
+                        to take and report on. For example, for State agencies
+                        using the waiver allowing parents and guardians to pick
+                        up meals without children present, FNS required that
+                        program operators put processes in place to ensure (1)
+                        meals were distributed only to parents and guardians of
+                        eligible children and (2) duplicate meals were not
+                        distributed to any child.
+                    </p>
+                    <h2 class="content-main-heading2">Data Collection</h2>
+                </div>
+                <!-- </section>
+            <section class="content-main-intro"> -->
+                <div class="content-main-callout-container">
+                    <p class="content-main-body">
+                        Data collection involved obtaining survey and
+                        administrative data from the 67 State agencies that
+                        administer NSLP, SBP, SSO, SFSP, and CACFP in the 50
+                        States, District of Columbia, Guam, Puerto Rico, and the
+                        U.S. Virgin Islands.
+                        <span
+                            class="content-main-body-footnote"
+                            matTooltipClass="tooltip"
+                            matTooltip="Data collection included 67 State agencies, as more than one State agency administered NSLP, SBO, SSO, SFSP, and CACFP in some States."
+                            aria-label="Data collection included 67 State agencies, as more than one State agency administered NSLP, SBO, SSO, SFSP, and CACFP in some States."
+                            matTooltipPosition="right"
+                            >&#185;</span
+                        >
+                        <!-- <span
+                            class="content-main-body-footnote"
+                            matTooltipClass="tooltip"
+                            matTooltip="Data collection included 67 State agencies, as more than one State agency administered NSLP, SBO, SSO, SFSP, and CACFP in some States."
+                            aria-label="Data collection included 67 State agencies, as more than one State agency administered NSLP, SBO, SSO, SFSP, and CACFP in some States."
+                            matTooltipPosition="right"
+                            >1</span
+                        > -->
+                        The survey of State agencies was fielded in spring 2021
+                        and gathered information to address the reporting
+                        requirements for the COVID-19 Child Nutrition nationwide
+                        waivers used in March through September 2020 as well as
+                        information on COVID-19 meal service and challenges
+                        during that period. The administrative data collection
+                        gathered data on program participation and meals served
+                        in the Child Nutrition Programs during the months of
+                        March through September 2020
+                        <span
+                            class="content-main-body-footnote"
+                            matTooltipClass="tooltip"
+                            matTooltip="Each month, State agencies report program data to FNS. The data are aggregated at the State level for NSLP, SBP, and SSO on the FNS-10, Report of School Program Operations; SFSP on the FNS-418, Report of the Summer Food Service Program for Children; and for CACFP on the FNS-44, Report of the Child and Adult Care Food Program. For this study, we requested State agencies submit the data elements collected on these forms disaggregated at the site or local program operator level, depending on the level available from the State agency. This data collection request was the first time State agencies have been asked to provide FNS-10, FNS-418, and FNS-44 data in this way."
+                            aria-label="Each month, State agencies report program data to FNS. The data are aggregated at the State level for NSLP, SBP, and SSO on the FNS-10, Report of School Program Operations; SFSP on the FNS-418, Report of the Summer Food Service Program for Children; and for CACFP on the FNS-44, Report of the Child and Adult Care Food Program. For this study, we requested State agencies submit the data elements collected on these forms disaggregated at the site or local program operator level, depending on the level available from the State agency. This data collection request was the first time State agencies have been asked to provide FNS-10, FNS-418, and FNS-44 data in this way."
+                            matTooltipPosition="right"
+                            >&#178;</span
+                        >
+                        as well as data on NSLP and SBP participation and meals
+                        served in the months preceding the start of the pandemic
+                        (October 2019 through February 2020).
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=7"
+                            target="_blank"
+                            >Appendix B</a
+                        >
+                        includes additional information about the data
+                        collection methods used for this report and limitations
+                        of the data.
+                    </p>
+                    <h2 class="content-main-heading2">
+                        Organization of report
+                    </h2>
+                    <p class="content-main-body">
+                        The chapters that follow describe the March through
+                        September 2020 study findings and key results. Chapter
+                        II describes findings related to Child Nutrition Program
+                        participation and meals served, focusing on trends in
+                        the initial months of the pandemic, the summer months of
+                        June and July 2020, and the early months of SY
+                        2020-2021. Chapter III describes the operational and
+                        financial challenges State agencies and local program
+                        operators experienced during the pandemic. Chapter IV
+                        describes findings on use of the COVID-19 Child
+                        Nutrition nationwide waivers, meal service methods, and
+                        how waivers improved services to children during the
+                        March through September 2020 period. Chapter V provides
+                        a brief overview of the next report of the study series,
+                        and the appendices provide supplemental information and
+                        tables.
+                    </p>
+                </div>
+                <div class="content-main-callout-wrapper">
+                    <p class="content-main-body">
+                        To help guide readers, the following icons are included
+                        in this report:
+                    </p>
+                    <div class="content-main-flex-wrap">
+                        <mat-card class="content-main-flex-item">
+                            <div class="content-chart-title-wrapper">
+                                <img
+                                    src="../../assets/images/challenges-01.svg"
+                                />
+                                <div
+                                    class="content-chart-title-category-wrapper"
+                                >
+                                    <p class="content-chart-title-category">
+                                        Challenges
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="content-chart-title">
+                                "Challenges" content focuses on challenges
+                                facing State agencies and local program
+                                operators.
+                            </p>
+                        </mat-card>
+                        <mat-card class="content-main-flex-item">
+                            <div class="content-chart-title-wrapper">
+                                <img
+                                    src="../../assets/images/meal-service-01.svg"
+                                />
+                                <div
+                                    class="content-chart-title-category-wrapper"
+                                >
+                                    <p class="content-chart-title-category">
+                                        Meal&nbsp;Service
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="content-chart-title">
+                                "Meal Service" content focuses on meals served
+                                in the Child Nutrition Programs.
+                            </p>
+                        </mat-card>
+                        <mat-card class="content-main-flex-item">
+                            <div class="content-chart-title-wrapper">
+                                <img
+                                    src="../../assets/images/participation-01.svg"
+                                />
+                                <div
+                                    class="content-chart-title-category-wrapper"
+                                >
+                                    <p class="content-chart-title-category">
+                                        Participation
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="content-chart-title">
+                                "Participation" content focuses on child
+                                participation in the Child Nutrition Programs.
+                            </p>
+                        </mat-card>
+                    </div>
+                </div>
+            </section>
+            <section class="content-main">
+                <div class="content-main-container">
+                    <h3 #Ch2 class="content-main-subheading">Chapter II</h3>
+                    <h1 class="content-main-heading1">
+                        Child Nutrition Program Participation and Meals Served
+                    </h1>
+                    <p class="content-main-body">
+                        This chapter describes findings related to Child
+                        Nutrition Program participation and meals served,
+                        focusing on trends in the initial months of the pandemic
+                        (March through May 2020), the summer months (June and
+                        July 2020), and the early months of SY 2020–2021 (August
+                        and September 2020).
+                    </p>
+                    <p class="content-main-body">
+                        At the start of the pandemic, child participation and
+                        meals served through NSLP and SBP decreased
+                        significantly as school buildings closed, though some
+                        children also began receiving meals through SSO and
+                        SFSP. In addition, substantially more meals were served
+                        through the summer meal programs in the summer of 2020
+                        as compared to previous years. Child participation and
+                        meals served through CACFP dropped at the beginning of
+                        the pandemic, and then increased to some extent, nearing
+                        pre-pandemic levels by September 2020.
+                    </p>
+                    <h2 class="content-main-heading2">
+                        The onset of the COVID-19 pandemic disrupted Child
+                        Nutrition Programs in spring 2020
+                    </h2>
+                    <p class="content-main-body">
+                        When the COVID-19 pandemic began in mid-March 2020, many
+                        schools and child care operators across the country
+                        stopped providing in-person education and services,
+                        resulting in a significant disruption to the Child
+                        Nutrition Programs that typically provide meals to
+                        children in those settings. During normal operations,
+                        SSO and SFSP provide meal service during the summer
+                        months and during unanticipated school building
+                        closures. As school buildings closed due to the
+                        pandemic, to ensure children's continued access to meals
+                        many SFAs and local program operators shifted to
+                        providing meal service through these programs (Food and
+                        Nutrition Service 2020a) during the March through May
+                        2020 time period.
+                    </p>
+                    <h3 class="content-main-heading3">
+                        Programs used to provide meals changed
+                    </h3>
+                    <p class="content-main-body">
+                        SY 2019–2020 began as a typical school year, with about
+                        97,000 schools participating in NSLP and 91,000
+                        participating in SBP (Food and Nutrition Service 2020b).
+                        However, after the COVID-19 pandemic began in March
+                        2020, the number of schools serving meals through NSLP
+                        and SBP dropped significantly. Some schools shifted to
+                        serving meals through SSO or SFSP, and in April and May
+                        2020, among the 44 States that provided school-level
+                        FNS-10 data and 45 States that provided site-level
+                        FNS-418 data for this study, about 17,000 sites
+                        nationwide were operating SSO and 26,000 were operating
+                        SFSP. However, the total number of schools and sites in
+                        operation in April and May was still far lower than the
+                        total number operating before the pandmic (Appendix
+                        Tables
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=15"
+                            target="_blank"
+                            >C.1</a
+                        >
+                        and
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=16"
+                            target="_blank"
+                            >C.2</a
+                        >).
+                    </p>
+                    <p class="content-main-body">
+                        Beginning in March, some local program operators used
+                        the area eligibility nationwide waiver to provide meals
+                        and snacks to all children at SSO and SFSP sites. This
+                        waiver allowed sponsors, regardless of their location,
+                        to operate open SSO and SFSP sites. Among States that
+                        provided data on use of the area eligibility waiver as
+                        part of the FNS-10 and FNS-418 administrative data
+                        collection, in March 16 percent of SSO sites and 13
+                        percent of SFSP sites in operation were new area
+                        eligible sites. Overall, over 90 percent of SSO and SFSP
+                        sites were open sites (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=17"
+                            target="_blank"
+                            >C.3</a
+                        >).
+                    </p>
+                    <p class="content-main-body">
+                        Before the pandemic, about 90,000 family day care homes
+                        and 70,000 child care centers were participating in
+                        CACFP (Food and Nutrition Service 2020b). Although many
+                        child care outlets stopped serving CACFP meals during
+                        those months, the decrease in participation was less
+                        severe in that program. For example, from March to April
+                        2020, the number of outlets serving CACFP meals
+                        decreased by almost 50 percent in the 43 States that
+                        provided these data
+                        <span
+                            class="content-main-body-footnote"
+                            matTooltipClass="tooltip"
+                            matTooltip="Each month, State agencies report CACFP data to FNS; the data are aggregated at the State level on the FNS-44, Report of the Child and Adult Care Food Program. The study team collected these data from States aggregated at the outlet or institution level, depending on the level available at the SA. Forty-three States were able to provide outlet-level data for the March through September 2020 period."
+                            aria-label="Each month, State agencies report CACFP data to FNS; the data are aggregated at the State level on the FNS-44, Report of the Child and Adult Care Food Program. The study team collected these data from States aggregated at the outlet or institution level, depending on the level available at the SA. Forty-three States were able to provide outlet-level data for the March through September 2020 period."
+                            matTooltipPosition="right"
+                            >&#179;</span
+                        >
+                        (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=18"
+                            target="_blank"
+                            >C.4</a
+                        >).
+                    </p>
+                    <h3 class="content-main-heading3">
+                        Child participation and meals served across all programs
+                        decreased substantially
+                    </h3>
+                    <p class="content-main-body">
+                        Consistent with the decrease in the number of school and
+                        child care buildings in which meal service was provided
+                        during spring 2020, the number of children participating
+                        in NSLP, SBP, and CACFP, and the number of meals served
+                        in those programs, also dropped substantially. While SSO
+                        and SFSP filled some of the gap, the number of children
+                        served and the total number of meals served in April and
+                        May fell far short of pre-pandemic levels.
+                    </p>
+                    <p class="content-main-body">
+                        From February to April, the COVID-19 pandemic unfolded
+                        and States and local program operators transitioned to
+                        serving children in new ways (discussed in Chapters III
+                        and IV). Families also adjusted to new daily routines.
+                        During these early months of the pandemic, the number of
+                        children participating in NSLP dropped from 26 million
+                        to 112,000, and the number participating in SBP dropped
+                        from 17 million to 132,000 (<span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigII1)"
+                            >Figure II.1</span
+                        >
+                        and Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=19"
+                            target="_blank"
+                            >C.5</a
+                        >). While some of the children who were participating in
+                        NSLP or SBP before the pandemic may have begun receiving
+                        meals through SFSP and SSO, only 10 million total
+                        children participated in SFSP and SSO in April.
+                    </p>
+                    <p class="content-main-body">
+                        Nearly equal numbers of children participated in NSLP
+                        and SBP in April as shown in
+                        <span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigII1)"
+                            >Figure II.1</span
+                        >. As shown in later figures, this trend continued
+                        through the summer. This is a departure from typical
+                        child participation patterns in these programs, where
+                        child participation in NSLP is approximately twice as
+                        high as participation in SBP (Food and Nutrition Service
+                        2020b).
+                    </p>
+                </div>
+
+                <div #FigII1 class="content-chart-main-container">
+                    <mat-card>
+                        <div class="content-chart-title-wrapper">
+                            <img
+                                src="../../assets/images/participation-01.svg"
+                            />
+                            <div class="content-chart-title-category-wrapper">
+                                <p class="content-chart-title-category">
+                                    Participation
+                                </p>
+                            </div>
+                        </div>
+                        <h2
+                            *ngIf="
+                                this.participationFilter ===
+                                'NSLP, SBP, SSO and SFSP'
+                            "
+                            class="content-chart-title"
+                        >
+                            <span class="content-main-body-bold"
+                                >Figure II.1.</span
+                            >
+                            Child participation in
+                            <span>{{ participationFilter }}</span
+                            >, January–September 2020 (Millions)
+                        </h2>
+                        <h2
+                            *ngIf="this.participationFilter === 'CACFP'"
+                            class="content-chart-title"
+                        >
+                            <span class="content-main-body-bold"
+                                >Figure II.1.</span
+                            >
+                            Child participation in
+                            <span>{{ participationFilter }}</span> by outlet
+                            type, January–September 2020 (Millions)
+                        </h2>
+
+                        <div class="chart-menu-wrapper">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Programs</mat-label>
+                                <mat-select
+                                    [formControl]="participationProgram"
+                                >
+                                    <mat-select-trigger>
+                                        {{ participationProgram.value }}
+                                    </mat-select-trigger>
+                                    <mat-option
+                                        *ngFor="
+                                            let program of participationProgramList
+                                        "
+                                        [value]="program"
+                                        (onSelectionChange)="
+                                            participationFilters($event)
+                                        "
+                                        >{{ program }}</mat-option
+                                    >
+                                </mat-select>
+                            </mat-form-field>
+                            <div>
+                                <p class="content-chart-legend-item-label">
+                                    View as chart or table
+                                </p>
+                                <mat-slide-toggle
+                                    (change)="participationToggle($event)"
+                                ></mat-slide-toggle>
+                            </div>
+                            <!-- </mat-card-actions> -->
+                        </div>
+
+                        <div class="content-chart-span">
+                            <app-participation
+                                [chartView]="participationView"
+                                [selectedProgram]="participationFilter"
+                                *ngIf="this.participationView === false"
+                            ></app-participation>
+                            <app-participation-table
+                                [chartView]="participationView"
+                                [selectedProgram]="participationFilter"
+                                *ngIf="this.participationView === true"
+                            ></app-participation-table>
+                        </div>
+                        <p
+                            class="chart-source"
+                            *ngIf="
+                                this.participationFilter ===
+                                'NSLP, SBP, SSO and SFSP'
+                            "
+                        >
+                            School Meals Operations Study, disaggregated FNS-10
+                            and FNS-418 data from fiscal year 2020.
+                        </p>
+                        <p
+                            class="chart-source"
+                            *ngIf="this.participationFilter === 'CACFP'"
+                        >
+                            School Meals Operations Study, disaggregated FNS-44
+                            data from fiscal year 2020.
+                        </p>
+                        <p
+                            class="chart-note"
+                            *ngIf="
+                                this.participationFilter ===
+                                'NSLP, SBP, SSO and SFSP'
+                            "
+                        >
+                            For SSO and SFSP, Child participation equals the
+                            meal count for the meal with the most claims in the
+                            divided by operating days. If the State did not
+                            provide operating days but did provide average daily
+                            meals, child participation equals the State-provided
+                            average daily meals. Pennsylvania did not provide
+                            operating days or average daily meals for SFSP and
+                            is therefore excluded from SFSP participation data.
+                        </p>
+                        <p
+                            class="chart-note"
+                            *ngIf="this.participationFilter === 'CACFP'"
+                        >
+                            Fiscal Year 2020 Child and Adult Care Food Program
+                            data from the School Meals Operations Study are
+                            available for March through September 2020. Child
+                            participation equals the meal count for the meal
+                            type with the most claims divided by operating days.
+                            If the State did not provide operating days but did
+                            provide average daily meals, child participation
+                            equals the State-provided average daily meals.
+                        </p>
+                    </mat-card>
+                </div>
+
+                <div class="content-main-container">
+                    <p class="content-main-body">
+                        Across all four programs, there was a 69 percent
+                        decrease in child participation between March and April.
+                        From April to May, the total number of children served
+                        was relatively stable, though more children were served
+                        through SFSP in May as compared to April, while fewer
+                        were served through SSO.
+                    </p>
+                    <p class="content-main-body">
+                        <span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigII2)"
+                            >Figure II.2</span
+                        >
+                        shows the number of meals served in Child Nutrition
+                        Programs between January and May 2020. This figure shows
+                        a large decrease in the number of meals served through
+                        NSLP and SBP, and increases in the number of meals
+                        served through SSO and SFSP. This finding is consistent
+                        with changes in the number of schools and sites
+                        operating each Program and child participation, both of
+                        which also decreased for NSLP and SBP, and increased for
+                        SSO and SFSP between January and May.
+                    </p>
+                </div>
+                <div #FigII2 class="content-chart-main-container">
+                    <mat-card>
+                        <div class="content-chart-title-wrapper">
+                            <img
+                                src="../../assets/images/meal-service-01.svg"
+                            />
+                            <div class="content-chart-title-category-wrapper">
+                                <p class="content-chart-title-category">
+                                    Meal Service
+                                </p>
+                            </div>
+                        </div>
+                        <h2
+                            *ngIf="
+                                this.serviceFilter === 'NSLP, SBP, SSO and SFSP'
+                            "
+                            class="content-chart-title"
+                        >
+                            <span class="content-main-body-bold"
+                                >Figure II.2.</span
+                            >
+                            Meals and snacks/supplements served through
+                            {{ serviceFilter }}, January–September 2020
+                            (Millions)
+                        </h2>
+                        <h2
+                            *ngIf="this.serviceFilter === 'CACFP'"
+                            class="content-chart-title"
+                        >
+                            <span class="content-main-body-bold"
+                                >Figure II.2.</span
+                            >
+                            Meals and snacks served through
+                            {{ serviceFilter }} by outlet type,
+                            January–September 2020 (Millions)
+                        </h2>
+                        <div class="chart-menu-wrapper">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Programs</mat-label>
+                                <mat-select [formControl]="serviceProgram">
+                                    <mat-select-trigger>
+                                        {{ serviceProgram.value }}
+                                    </mat-select-trigger>
+                                    <mat-option
+                                        *ngFor="
+                                            let program of serviceProgramList
+                                        "
+                                        [value]="program"
+                                        (onSelectionChange)="
+                                            serviceFilters($event)
+                                        "
+                                        >{{ program }}</mat-option
+                                    >
+                                </mat-select>
+                            </mat-form-field>
+                            <div>
+                                <p class="content-chart-legend-item-label">
+                                    View as chart or table
+                                </p>
+                                <mat-slide-toggle
+                                    (change)="serviceToggle($event)"
+                                ></mat-slide-toggle>
+                            </div>
+                            <!-- </mat-card-actions> -->
+                        </div>
+
+                        <div class="content-chart-span">
+                            <app-service
+                                [chartView]="serviceView"
+                                [selectedProgram]="serviceFilter"
+                                *ngIf="this.serviceView === false"
+                            ></app-service>
+                            <app-service-table
+                                [chartView]="serviceView"
+                                [selectedProgram]="serviceFilter"
+                                *ngIf="this.serviceView === true"
+                            ></app-service-table>
+                        </div>
+                        <p
+                            class="chart-source"
+                            *ngIf="
+                                this.serviceFilter === 'NSLP, SBP, SSO and SFSP'
+                            "
+                        >
+                            School Meals Operations Study, disaggregated FNS-10
+                            and FNS-418 data from fiscal year 2020.
+                        </p>
+                        <p
+                            class="chart-source"
+                            *ngIf="this.serviceFilter === 'CACFP'"
+                        >
+                            January and February 2020 data are from U.S.
+                            Department of Agriculture Food and Nutrition Service
+                            Program Information Report (Keydata) for fiscal year
+                            2019 - 2020. March – September data are from School
+                            Meals Operations Study fiscal year 2020
+                            disaggregated FNS-44 data.
+                        </p>
+                    </mat-card>
+                </div>
+                <div class="content-main-container">
+                    <p class="content-main-body">
+                        About 3.5 million children participated in CACFP in
+                        March 2020, when CACFP data collection for this study
+                        began. In March, about 3 million children in child care
+                        centers participated in CACFP and about 400,000 in
+                        family day care homes. These numbers likely reflect a
+                        decline in child participation that had already begun
+                        due to the COVID-19 pandemic. Child participation in
+                        both child care centers and family day care homes
+                        further decreased in April to 1 million and 200,000,
+                        respectively. In May, child participation increased to
+                        1.7 million in child care centers and 300,000 in family
+                        day care homes, as some child care outlets either
+                        re-opened or opened for meal service after initial
+                        school building closures (<span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigII1)"
+                            >Figure II.1</span
+                        >
+                        and Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=20"
+                            target="_blank"
+                            >C.6</a
+                        >).
+                    </p>
+                    <p class="content-main-body">
+                        The number of meals and snacks served follows a similar
+                        trend as child participation, both for child care
+                        centers and family day care homes (<span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigII2)"
+                            >Figure II.2</span
+                        >
+                        and Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=21"
+                            target="_blank"
+                            >C.7</a
+                        >). However, the percentage decrease in meals served in
+                        child care centers was more substantial than the
+                        decrease in meals served in family day care homes,
+                        likely reflecting that a greater proportion of child
+                        care centers closed or otherwise stopped serving meals
+                        during the early months of the pandemic.
+                    </p>
+                    <h2 class="content-main-heading2">
+                        Summer 2020 brought increases in children served and
+                        meals served through the summer meal programs compared
+                        to previous years, and CACFP meal service began to
+                        recover from spring lows
+                    </h2>
+                    <p class="content-main-body">
+                        During June and July 2020, child participation and meals
+                        served through summer meal programs were higher than in
+                        June and July of previous years. CACFP meal service also
+                        began to recover from April and May lows. In this
+                        section and Section C, findings are compared with the
+                        previous school year where relevant.
+                    </p>
+                    <h3 class="content-main-heading3">
+                        SFSP, SSO, and CACFP were the primary programs used to
+                        serve meals
+                    </h3>
+                    <p class="content-main-body">
+                        Consistent with the spring shift in local program
+                        operators operating SFSP and SSO, many sites operated
+                        SFSP or SSO during the summer months, and the total
+                        number of these sites increased somewhat from the April
+                        to May time period, when 17,000 sites were operating SSO
+                        and 26,000 were operating SFSP. Across June and July
+                        2020, a total of about 48,000 sites operated SSO or
+                        SFSP, with about one-fourth of those operating SSO and
+                        three-fourths operating SFSP (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=16"
+                            target="_blank"
+                            >C.2</a
+                        >). Consistent with the spring, about 2,600 sites
+                        operated NSLP or SBP during the summer.
+                    </p>
+                    <p class="content-main-body">
+                        Among States that provided data on use of the area
+                        eligibility nationwide waiver, 18 percent of SSO sites
+                        in operation in June were new area eligible sites. This
+                        dropped to 6 percent of sites in July. Twelve percent of
+                        SFSP sites in operation in June were new area eligible
+                        sites. This increased to 13 percent in July. Among
+                        States that provided data on whether SSO and SFSP sites
+                        operated as open or closed, in June and July, over 90
+                        percent of SSO and SFSP sites in operation were open
+                        sites (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=17"
+                            target="_blank"
+                            >C.3</a
+                        >)
+                    </p>
+                    <p class="content-main-body">
+                        In comparison to the April to May time period, there was
+                        also a modest increase in the total number of child care
+                        outlets operating CACFP during June and July 2020, with
+                        about 73,000 outlets operating CACFP in the 43 States
+                        that provided these data (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=18"
+                            target="_blank"
+                            >C.4</a
+                        >). However, the total outlets operating CACFP in those
+                        months was still far less than the 160,000 total outlets
+                        operating the program nationwide before the pandemic
+                        began.
+                        <span
+                            class="content-main-body-footnote"
+                            matTooltipClass="tooltip"
+                            matTooltip="FNS Keydata shows 72,408 family day care homes and 31,737 child care centers operating in June 2020, for a total of 104,145 CACFP outlets operating that month across all States and territories. (Food and Nutrition Service 2020b)."
+                            aria-label="FNS Keydata shows 72,408 family day care homes and 31,737 child care centers operating in June 2020, for a total of 104,145 CACFP outlets operating that month across all States and territories. (Food and Nutrition Service 2020b)."
+                            matTooltipPosition="right"
+                            >&#8308;</span
+                        >
+                    </p>
+                    <h3 class="content-main-heading3">
+                        SFSP and SSO served substantially more children and more
+                        meals than in previous summers
+                    </h3>
+                    <p class="content-main-body">
+                        In June and July 2020, SFSP served meals to about 5
+                        million children, which was almost double the 2.6 to 2.7
+                        million children served SFSP meals in each of the five
+                        previous summers. In addition, SSO served meals to about
+                        1.3 million children in July 2020 across the 40 States
+                        that provided these data (<span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigII3)"
+                            >Figure II.3</span
+                        >), an increase over the estimated 1.1 million children
+                        served SSO meals nationwide in July 2019 (Food and
+                        Nutrition Service 2020b).
+                        <span
+                            class="content-main-body-footnote"
+                            matTooltipClass="tooltip"
+                            matTooltip="FNS has traditionally considered July data reported by the States on children served through NSLP as a proxy for SSO. SMO requested that States provide SSO data separate from NSLP data, and 40 States were able to provide SSO participation data for the March through September 2020 period."
+                            aria-label="FNS has traditionally considered July data reported by the States on children served through NSLP as a proxy for SSO. SMO requested that States provide SSO data separate from NSLP data, and 40 States were able to provide SSO participation data for the March through September 2020 period."
+                            matTooltipPosition="right"
+                            >&#8309;</span
+                        >
+                    </p>
+                </div>
+                <div #FigII3 class="content-chart-main-container">
+                    <mat-card>
+                        <div class="content-chart-title-wrapper">
+                            <img
+                                *ngIf="
+                                    this.summerFilter === 'Child Participation'
+                                "
+                                src="../../assets/images/participation-01.svg"
+                            />
+                            <img
+                                *ngIf="this.summerFilter === 'Meals Served'"
+                                src="../../assets/images/meal-service-01.svg"
+                            />
+                            <div class="content-chart-title-category-wrapper">
+                                <p
+                                    *ngIf="
+                                        this.summerFilter ===
+                                        'Child Participation'
+                                    "
+                                    class="content-chart-title-category"
+                                >
+                                    Participation
+                                </p>
+                                <p
+                                    *ngIf="this.summerFilter === 'Meals Served'"
+                                    class="content-chart-title-category"
+                                >
+                                    Meal Service
+                                </p>
+                            </div>
+                        </div>
+                        <h2
+                            *ngIf="this.summerFilter === 'Meals Served'"
+                            class="content-chart-title"
+                        >
+                            <span class="content-main-body-bold"
+                                >Figure II.3.</span
+                            >
+                            Number of meals and snacks/supplements served in SSO
+                            and SFSP, July 2019 and July 2020 (Millions)
+                        </h2>
+                        <h2
+                            *ngIf="this.summerFilter === 'Child Participation'"
+                            class="content-chart-title"
+                        >
+                            <span class="content-main-body-bold"
+                                >Figure II.3.</span
+                            >
+                            Number of children participating in SSO and SFSP,
+                            July 2019 and July 2020 (Millions)
+                        </h2>
+                        <div class="chart-menu-wrapper">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Programs</mat-label>
+                                <mat-select [formControl]="summerProgram">
+                                    <mat-select-trigger>
+                                        {{ summerProgram.value }}
+                                    </mat-select-trigger>
+                                    <mat-option
+                                        *ngFor="
+                                            let program of summerProgramList
+                                        "
+                                        [value]="program"
+                                        (onSelectionChange)="
+                                            summerFilters($event)
+                                        "
+                                        >{{ program }}</mat-option
+                                    >
+                                </mat-select>
+                            </mat-form-field>
+                            <div>
+                                <p class="content-chart-legend-item-label">
+                                    View as chart or table
+                                </p>
+                                <mat-slide-toggle
+                                    (change)="summerToggle($event)"
+                                ></mat-slide-toggle>
+                            </div>
+                            <!-- </mat-card-actions> -->
+                        </div>
+                        <div class="content-chart-span">
+                            <app-summer-participation
+                                [chartView]="summerView"
+                                [selectedProgram]="summerFilter"
+                                *ngIf="this.summerView === false"
+                            ></app-summer-participation>
+                            <app-summer-participation-table
+                                [chartView]="summerView"
+                                [selectedProgram]="summerFilter"
+                                *ngIf="this.summerView === true"
+                            ></app-summer-participation-table>
+                        </div>
+                        <p class="chart-source">
+                            July 2019 data are from U.S. Department of
+                            Agriculture Food and Nutrition Service Program
+                            Information Report (Keydata) for fiscal year 2019 -
+                            2020. July 2020 data are from School Meals
+                            Operations Study fiscal year 2020 disaggregated
+                            FNS-10 and FNS-418 data.
+                        </p>
+                        <p
+                            *ngIf="this.summerFilter === 'Child Participation'"
+                            class="chart-note"
+                        >
+                            Child participation equals the meal count for the
+                            meal type with the most claims divided by operating
+                            days. If the State did not provide operating days
+                            but did provide average daily meals, child
+                            participation equals the State-provided average
+                            daily meals. Pennsylvania did not provide operating
+                            days or average daily meals for SFSP and is
+                            therefore excluded from SFSP participation data.
+                        </p>
+                        <p
+                            *ngIf="this.summerFilter === 'Meals Served'"
+                            class="chart-note"
+                        >
+                            For July 2020 data on meals served, 26 States
+                            provided SSO data separate from NSLP data, and 45
+                            States provided site-level FNS-418 data.
+                        </p>
+                    </mat-card>
+                </div>
+                <div class="content-main-container">
+                    <p class="content-main-body">
+                        Participation in Child Nutrition Programs overall
+                        traditionally decreases in the summer when children are
+                        not in school and taken together, as shown in
+                        <span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigII1)"
+                            >Figure II.1</span
+                        >
+                        child participation across NSLP, SBP, SSO, and SFSP
+                        decreased between May and July 2020. However the
+                        decrease was small, and was much smaller than in
+                        previous summers.
+                    </p>
+                    <p class="content-main-body">
+                        At the same time, the number of meals and supplements
+                        served in SFSP in summer 2020 was more than double the
+                        number served through SFSP in the previous summer. For
+                        example, in July 2020, 175 million meals and supplements
+                        were served through SFSP across the 45 States that
+                        provided these data (<span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigII3)"
+                            >Figure II.3</span
+                        >), compared with 70 million SFSP meals served
+                        nationwide in July 2019. Of the 175 million meals and
+                        supplements served in July 2020, 87 million were
+                        lunches, 81 million were breakfasts, 4 million were
+                        supplements, and 3 million were suppers. In addition to
+                        the increase in the total number of meals and
+                        supplements served during summer 2020, the number of
+                        sites serving at least two meals was generally more
+                        prevalent than in previous years. More than 85 percent
+                        of SFSP sites served at least two meals in June and July
+                        2020 (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=23"
+                            target="_blank"
+                            >C.8</a
+                        >) and the number of breakfasts served in June and July
+                        2020 was almost equal to the number of lunches served.
+                        In comparison, in summer 2019, only about half the
+                        number of SFSP breakfasts were served as SFSP lunches.
+                        How waivers contributed to local program operators
+                        serving multiple meals per day is discussed in Chapter
+                        IV.
+                    </p>
+                    <p class="content-main-body">
+                        Also shown in
+                        <span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigII3)"
+                            >Figure II.3</span
+                        >, about 54 million meals were served through SSO in
+                        July 2020 across the 26 States that provided these data.
+                        Although this includes only about half of the States,
+                        this was more than double the estimated 25.5 million
+                        meals served through SSO nationwide in July 2019.
+                        <span
+                            class="content-main-body-footnote"
+                            matTooltipClass="tooltip"
+                            matTooltip="Child participation equals the meal count for the meal type with the most claims divided by operating days. If the State did not provide operating days but did provide average daily meals, child participation equals the State-provided average daily meals. Pennsylvania did not provide operating days or average daily meals for SFSP and is therefore excluded from SFSP participation data. For July 2020 data on meals served, 26 States provided SSO data separate from NSLP data, and 45 States provided site-level FNS-418 data."
+                            aria-label="Child participation equals the meal count for the meal type with the most claims divided by operating days. If the State did not provide operating days but did provide average daily meals, child participation equals the State-provided average daily meals. Pennsylvania did not provide operating days or average daily meals for SFSP and is therefore excluded from SFSP participation data. For July 2020 data on meals served, 26 States provided SSO data separate from NSLP data, and 45 States provided site-level FNS-418 data."
+                            matTooltipPosition="right"
+                            >&#8310;</span
+                        >
+                        Similar to SFSP, SSO sites also predominantly served two
+                        meals in summer 2020, with 93 percent of sites reporting
+                        serving two meals in July 2020. In July 2019, about two
+                        thirds the number of SSO breakfasts were served as SSO
+                        lunches (Food and Nutrition Service 2020b).
+                    </p>
+                    <p class="content-main-body">
+                        As noted, participation in Child Nutrition Programs
+                        traditionally decreases in the summer when children are
+                        not in school, leading to a significant drop in the
+                        number of meals served in the summer compared to the
+                        school year. Although this trend continued in summer
+                        2020, the drop was less severe, as shown in
+                        <span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigII2)"
+                            >Figure II.2</span
+                        >. For context, the 175 million meals served in SFSP in
+                        July 2020 across the 45 States that provided these data
+                        is greater than the total number of SFSP meals served
+                        from May through September 2019 nationwide.
+                    </p>
+                    <h3 class="content-main-heading3">
+                        CACFP participation fluctuated and meals served started
+                        to recover from spring lows
+                    </h3>
+                    <p class="content-main-body">
+                        Child participation in CACFP fluctuated to some extent
+                        in the summer months. In May and June, about 1.7 million
+                        children participated in CACFP in child care centers and
+                        300,000 children in family day care homes. In July,
+                        about 900,000 children participated in CACFP in child
+                        care centers and 300,000 in family day care homes (<span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigII1)"
+                            >Figure II.1</span
+                        >
+                        and Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=20"
+                            target="_blank"
+                            >C.6</a
+                        >).
+                    </p>
+                    <p class="content-main-body">
+                        At the same time, CACFP served more meals in the summer
+                        months, beginning to recover from spring lows, as shown
+                        in
+                        <span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigII2)"
+                            >Figure II.2</span
+                        >. This was consistent across outlet types, as the total
+                        number of meals served in child care centers and family
+                        day care homes was greater in both June and July than
+                        the number served in either April or May. One exception
+                        was the number of CACFP meals served in at-risk
+                        afterschool programs, which decreased slightly from May
+                        to June and then dropped by about five percent from June
+                        to July, consistent with at-risk afterschool programs
+                        pausing operations for the summer.
+                    </p>
+                    <h2 class="content-main-heading2">
+                        Program participation reflected uncertainty at the start
+                        of SY 2020–2021 (August–September 2020), yet more
+                        children and meals were served
+                    </h2>
+                    <p class="content-main-body">
+                        Uncertainty at the beginning of SY 2020–2021 regarding
+                        (1) whether schools would operate in person, remotely,
+                        or using a hybrid approach, and (2) the ongoing
+                        availability of COVID-19 Child Nutrition nationwide
+                        waivers, led some local program operators to return to
+                        using school meal programs while others continued using
+                        summer meal programs to serve meals to children. At the
+                        same time, the number of sites operating, children
+                        participating, and meals served increased in all of the
+                        Programs.
+                    </p>
+                    <h3 class="content-main-heading3">
+                        Some local program operators returned to using school
+                        meal programs, while others continued using summer meal
+                        programs at sites
+                    </h3>
+                    <p class="content-main-body">
+                        As the 2020-2021 school year began, there was a
+                        substantial increase in the number of schools operating
+                        NSLP and SBP, as some schools resumed in-person
+                        operations. This increase in NSLP and SBP sites may have
+                        also been related to uncertainty around whether
+                        nationwide waivers would be authorized to allow
+                        continued operation of summer meal programs. In June and
+                        July 2020, the total number of schools operating NSLP or
+                        SBP was about 2,600, and this increased to over 30,000
+                        in the August and September time period (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=16"
+                            target="_blank"
+                            >C.2</a
+                        >). At the same time, the number of sites providing
+                        meals through the other Child Nutrition Programs also
+                        increased. The total number of sites operating SSO in
+                        August and September was almost double the number that
+                        operated the program in June and July. Similarly, the
+                        total number of sites operating SFSP increased by about
+                        40 percent as the school year began. The number of
+                        outlets providing CACFP meals also increased by about 18
+                        percent during this period. Despite these increases, the
+                        number of sites operating in September 2020 was still
+                        substantially lower than March 2020 (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=16"
+                            target="_blank"
+                            >C.2</a
+                        >).
+                    </p>
+                    <p class="content-main-body">
+                        Among States that provided data on use of the area
+                        eligibility nationwide waiver, 10 percent of SSO sites
+                        in operation in August were new area eligible sites.
+                        This increased to 18 percent in September. Seventeen
+                        percent of SFSP sites in operation in August were new
+                        area eligible sites. This increased to 26 percent in
+                        September. Among States that provided data on whether
+                        SSO and SFSP sites operated as open or closed, in August
+                        86 percent of SSO and SFSP sites in operation were open
+                        sites, dropping to 73 percent in September (Appendix
+                        Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=17"
+                            target="_blank"
+                            >C.3</a
+                        >).
+                    </p>
+                    <h3 class="content-main-heading3">
+                        More children and meals were served through NSLP and
+                        SBP, though SFSP and SSO continued to drive meal service
+                    </h3>
+                    <p class="content-main-body">
+                        The increased number of sites serving Child Nutrition
+                        Program meals led to an increase in the number of
+                        children participating across all of the programs
+                        (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=16"
+                            target="_blank"
+                            >C.2</a
+                        >). Comparing the summer months to September 2020, the
+                        total number of children participating in NSLP, SBP,
+                        SSO, and SFSP doubled as SY 2020-2021 began (<span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigII1)"
+                            >Figure II.1</span
+                        >). Although the number of children participating in
+                        NSLP and SBP substantially increased during that period,
+                        SSO and SFSP continued to serve the most children. In
+                        September 2020, more than three-fourths of the almost 15
+                        million children served through these programs were
+                        served by SSO or SFSP. Local program operators'
+                        continued use of SSO and SFSP to serve meals to children
+                        was directly related to the September issuance of
+                        COVID-19 Child Nutrition nationwide waivers that allowed
+                        the summer meal programs to be used during the school
+                        year. As shown in
+                        <span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigII1)"
+                            >Figure II.1</span
+                        >, despite these increases, participation across Child
+                        Nutrition Programs was still much lower in September
+                        2020 than it had been in March 2020.
+                    </p>
+                    <p class="content-main-body">
+                        The predominant use of SFSP and SSO at the beginning of
+                        the school year was also reflected in the number of
+                        meals served. As shown in
+                        <span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigII2)"
+                            >Figure II.2</span
+                        >, local program operators continued serving most meals
+                        through SFSP and SSO, with NSLP and SBP making up a much
+                        smaller share of meals served.
+                    </p>
+                    <h3 class="content-main-heading3">
+                        CACFP participation and meals served continued to
+                        increase but had not reached pre-pandemic levels by
+                        September
+                    </h3>
+                    <p class="content-main-body">
+                        Although child participation in CACFP had not reached
+                        pre-pandemic levels by September 2020, total child
+                        participation in CACFP did increase each month from July
+                        through September. These increases were driven by
+                        changes in child participation in child care centers.
+                        Child participation in family day care homes changed
+                        minimally from July to September 2020, as shown in
+                        <span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigII1)"
+                            >Figure II.1</span
+                        >.
+                    </p>
+                    <p class="content-main-body">
+                        By September 2020, the number of meals served in CACFP
+                        was approaching the number served in March. This
+                        increase is reflected across most outlet types: child
+                        care centers served 70 million meals in March 2020, and
+                        69 million in September 2020; family day care homes
+                        served 18 million meals in March 2020 and 17 million
+                        meals in September 2020, as shown in
+                        <span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigII2)"
+                            >Figure II.2</span
+                        >. Within the category of child care centers, the number
+                        of meals served in September in at-risk afterschool
+                        programs surpassed the number served in March, with
+                        about 15,000 breakfasts, 162,000 lunches, 8 million
+                        suppers, and 4 million snacks served that month. Head
+                        Start centers and emergency shelters showed the largest
+                        remaining deficit in number of meals served when
+                        comparing March and September (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=21"
+                            target="_blank"
+                            >C.7</a
+                        >).
+                    </p>
+                </div>
+            </section>
+
+            <section class="content-main">
+                <div class="content-main-container">
+                    <h3 #Ch3 class="content-main-subheading">Chapter III</h3>
+                    <h1 class="content-main-heading1">
+                        Program Operations and Financial Challenges During the
+                        Pandemic
+                    </h1>
+                    <p class="content-main-body">
+                        With the onset of the COVID-19 pandemic, local program
+                        operators and State agencies faced a variety of
+                        operational challenges to providing meal service. About
+                        50 percent of State agencies reported that more than
+                        half of SFAs operating NSLP, SBP, SSO, or SFSP, and
+                        institutions operating CACFP faced operational
+                        challenges providing meal service in the early months of
+                        the pandemic. Slightly fewer State agencies, about 40
+                        percent, reported that more than half of non-SFA
+                        sponsors of SFSP faced such challenges (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=27"
+                            target="_blank"
+                            >D.1</a
+                        >).
+                    </p>
+                    <p class="content-main-body">
+                        State agencies most frequently reported that local
+                        program operators faced challenges related to staffing
+                        and safety issues, such as ensuring continuity of
+                        operations during staff absences or ensuring staff
+                        safety and obtaining personal protective equipment. The
+                        majority of State agencies also reported that
+                        redistributing staff to manage meal sites and delivery
+                        methods, establishing new meal delivery methods, and
+                        providing meals during food shortages or supply chain
+                        issues also presented challenges for local program
+                        operators during this time period (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=28"
+                            target="_blank"
+                            >D.2</a
+                        >).
+                        <span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigIII1)"
+                            >Figure III.1</span
+                        >
+                        shows the percentage of State agencies that reported
+                        each factor as contributing to operational challenges
+                        faced by local program operators providing meal service
+                        during the initial months of the COVID-19 pandemic. The
+                        range shown for each factor reflects variation across
+                        local program operator types, including SFAs operating
+                        NSLP, SBP, or SSO; SFAs operating SFSP; other sponsors
+                        operating SFSP; and institutions operating CACFP.
+                    </p>
+                </div>
+                <div #FigIII1 class="content-chart-main-container">
+                    <mat-card>
+                        <div class="content-chart-title-wrapper">
+                            <img src="../../assets/images/challenges-01.svg" />
+                            <div class="content-chart-title-category-wrapper">
+                                <p class="content-chart-title-category">
+                                    Challenges
+                                </p>
+                                <p class="content-chart-title-category">
+                                    Operations
+                                </p>
+                            </div>
+                        </div>
+                        <h2 class="content-chart-title">
+                            <span class="content-main-body-bold"
+                                >Figure III.1.</span
+                            >
+                            Percentage of State agencies reporting factors that
+                            contributed to local program operators' operational
+                            challenges providing meal service, March–September
+                            2020
+                        </h2>
+                        <div class="chart-menu-wrapper">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Programs</mat-label>
+                                <mat-select [formControl]="operationsProgram">
+                                    <mat-select-trigger>
+                                        {{ operationsProgram.value }}
+                                    </mat-select-trigger>
+                                    <mat-option
+                                        *ngFor="
+                                            let program of operationsProgramList
+                                        "
+                                        [value]="program"
+                                        (onSelectionChange)="
+                                            operationsFilters($event)
+                                        "
+                                        >{{ program }}</mat-option
+                                    >
+                                </mat-select>
+                            </mat-form-field>
+                            <div>
+                                <p class="content-chart-legend-item-label">
+                                    View as chart or table
+                                </p>
+                                <mat-slide-toggle
+                                    (change)="operationsToggle($event)"
+                                ></mat-slide-toggle>
+                            </div>
+                            <!-- </mat-card-actions> -->
+                        </div>
+                        <div class="content-chart-span">
+                            <app-operations
+                                [chartView]="operationsView"
+                                [selectedProgram]="programFilter"
+                                *ngIf="this.operationsView === false"
+                            ></app-operations>
+                            <app-operations-table
+                                [chartView]="operationsView"
+                                [selectedProgram]="programFilter"
+                                *ngIf="this.operationsView === true"
+                            ></app-operations-table>
+                        </div>
+                        <p class="chart-source">
+                            School Meals Operations Study, State Agency Child
+                            Nutrition Director COVID-19 Waiver Collection School
+                            Year 2020–2021.
+                        </p>
+                        <p class="chart-note">
+                            The figure includes the percentage of State agencies
+                            reporting that each factor contributed to
+                            operational challenges faced by their local program
+                            operators in providing meal service from March
+                            through September 2020. The bars indicate the extent
+                            of variation in State agency responses by type of
+                            local program operator, including SFAs operating
+                            NSLP, SBP, or SSO; SFAs operating SFSP; other
+                            sponsors operating SFSP; and institutions operating
+                            CACFP.
+                        </p>
+                    </mat-card>
+                </div>
+                <div class="content-main-container">
+                    <p class="content-main-body">
+                        Half of State agencies reported that operational
+                        challenges for local program operators in rural areas
+                        differed from those in urban or suburban areas during
+                        the March through September 2020 period. These State
+                        agencies reported that local program operators in rural
+                        areas experienced challenges with meal site access or
+                        distance to sites, supply chain issues, meal delivery,
+                        and staff availability (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=29"
+                            target="_blank"
+                            >D.3</a
+                        >).
+                    </p>
+                    <p class="content-main-body">
+                        About 60 percent of State agencies reported that more
+                        than half of SFAs operating NSLP, SBP, SSO, or SFSP, and
+                        institutions operating CACFP, also faced financial
+                        challenges providing meal service in the early months of
+                        the pandemic. Fewer State agencies, about 40 percent,
+                        reported that more than half of non-SFA sponsors of SFSP
+                        faced financial challenges (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=29"
+                            target="_blank"
+                            >D.4</a
+                        >).
+                    </p>
+                    <p class="content-main-body">
+                        State agencies most frequently reported that decreased
+                        Federal reimbursement resulting from decreased Child
+                        Nutrition Program participation as well as various costs
+                        related to serving meals during the pandemic contributed
+                        to financial challenges from March through September
+                        2020. For example, consistent with the operational
+                        challenges local program operators experienced in trying
+                        to ensure the safety of their staff, State agencies most
+                        frequently reported that needing to purchase personal
+                        protective equipment for staff contributed to local
+                        program operators' financial challenges. State agencies
+                        also reported that meal packaging costs and meal
+                        transportation and delivery costs contributed to
+                        challenges, likely due to local program operators
+                        needing to find ways to serve meals to children outside
+                        of school and child care center buildings. Local program
+                        operators also experienced increased food costs, likely
+                        in part due to supply chain issues (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=30"
+                            target="_blank"
+                            >D.5</a
+                        >).
+                        <span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigIII2)"
+                            >Figure III.2</span
+                        >
+                        shows the percentage of State agencies that reported
+                        each factor as contributing to financial challenges
+                        faced by local program operators. The range shown for
+                        each factor reflects variation across local program
+                        operator types.
+                    </p>
+                </div>
+                <div #FigIII2 class="content-chart-main-container">
+                    <mat-card>
+                        <div class="content-chart-title-wrapper">
+                            <img src="../../assets/images/challenges-01.svg" />
+                            <div class="content-chart-title-category-wrapper">
+                                <p class="content-chart-title-category">
+                                    Challenges
+                                </p>
+                                <p class="content-chart-title-category">
+                                    Finances
+                                </p>
+                            </div>
+                        </div>
+                        <h2 class="content-chart-title">
+                            <span class="content-main-body-bold"
+                                >Figure III.2.</span
+                            >
+                            Percentage of State agencies reporting factors that
+                            contributed to local program operators' financial
+                            challenges providing meal service, March–September
+                            2020
+                        </h2>
+                        <div class="chart-menu-wrapper">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Programs</mat-label>
+                                <mat-select [formControl]="financeProgram">
+                                    <mat-select-trigger>
+                                        {{ financeProgram.value }}
+                                    </mat-select-trigger>
+                                    <mat-option
+                                        *ngFor="
+                                            let program of financeProgramList
+                                        "
+                                        [value]="program"
+                                        (onSelectionChange)="
+                                            financeFilters($event)
+                                        "
+                                        >{{ program }}</mat-option
+                                    >
+                                </mat-select>
+                            </mat-form-field>
+                            <div>
+                                <p class="content-chart-legend-item-label">
+                                    View as chart or table
+                                </p>
+                                <mat-slide-toggle
+                                    (change)="financeToggle($event)"
+                                ></mat-slide-toggle>
+                            </div>
+                            <!-- </mat-card-actions> -->
+                        </div>
+                        <div class="content-chart-span">
+                            <app-financial-challenges
+                                [chartView]="financeView"
+                                [selectedProgram]="financeFilter"
+                                *ngIf="this.financeView === false"
+                            ></app-financial-challenges>
+                            <app-financial-challenges-table
+                                [chartView]="financeView"
+                                [selectedProgram]="financeFilter"
+                                *ngIf="this.financeView === true"
+                            ></app-financial-challenges-table>
+                        </div>
+                        <p class="chart-source">
+                            School Meals Operations Study, State Agency Child
+                            Nutrition Director COVID-19 Waiver Collection School
+                            Year 2020–2021.
+                        </p>
+                        <p class="chart-note">
+                            The figure includes the percentage of State agencies
+                            reporting that each factor contributed to financial
+                            challenges faced by their local program operators in
+                            providing meal service from March through September
+                            2020. The bars indicate the extent of variation in
+                            State agency responses by type of local program
+                            operator, including SFAs operating NSLP, SBP, or
+                            SSO; SFAs operating SFSP; other sponsors operating
+                            SFSP; and institutions operating CACFP.
+                        </p>
+                    </mat-card>
+                </div>
+                <div class="content-main-container">
+                    <p class="content-main-body">
+                        Almost 70 percent of State agencies reported that
+                        financial challenges for local program operators in
+                        rural areas differed from those in urban or suburban
+                        areas during the March through September 2020 period.
+                        Those State agencies reported that rural local program
+                        operators faced higher transportation and food costs,
+                        and that participation decreases affected the finances
+                        of rural local program operators more negatively than
+                        other local program operators (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=31"
+                            target="_blank"
+                            >D.6</a
+                        >).
+                    </p>
+                    <p class="content-main-body">
+                        State agencies themselves also experienced operational
+                        and, to some extent, financial challenges during the
+                        early months of the pandemic. About three-fourths of
+                        State agencies reported experiencing operational
+                        challenges, and about two-thirds reported challenges
+                        using and implementing COVID-19 Child Nutrition
+                        nationwide waivers (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=31"
+                            target="_blank"
+                            >D.7</a
+                        >). State agencies most commonly reported that slow or
+                        unclear guidance from FNS contributed to the operational
+                        challenges they faced during this time period. Needing
+                        to redesign their approaches to monitoring the Child
+                        Nutrition Programs, such as switching from onsite
+                        monitoring to virtual, also presented a challenge for
+                        State agencies (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=32"
+                            target="_blank"
+                            >D.8</a
+                        >). Thirty percent of State agencies reported that they
+                        were able to overcome the challenges they faced with the
+                        COVID-19 Child Nutrition waivers. Thirty-seven percent
+                        of State agencies, however, reported that they were
+                        unable to overcome certain challenges, such as slow or
+                        unclear guidance from FNS, the time and effort needed to
+                        collect waiver data, and staff burden (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=33"
+                            target="_blank"
+                            >D.9</a
+                        >). Less than one quarter of State agencies reported
+                        experiencing financial challenges during the March
+                        through September 2020 period. These challenges were
+                        most commonly caused by increased staff hours and IT
+                        systems changes (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=33"
+                            target="_blank"
+                            >D.10</a
+                        >).
+                    </p>
+                    <h3 #Ch4 class="content-main-subheading">Chapter IV</h3>
+                    <h1 class="content-main-heading1">
+                        Use of COVID-19 Child Nutrition Nationwide Waivers to
+                        Improve Services to Children
+                    </h1>
+                </div>
+            </section>
+
+            <section class="content-main">
+                <div class="content-main-container">
+                    <p class="content-main-body">
+                        When the pandemic began in March 2020, with the
+                        authority provided by the FFCRA, FNS issued COVID-19
+                        Child Nutrition nationwide waivers that provided States
+                        and local program operators with flexibilities to help
+                        them serve meals under the Child Nutrition Programs with
+                        appropriate safety measures to children who were no
+                        longer routinely being educated in school buildings due
+                        to the pandemic. The key Child Nutrition Programs used
+                        to provide meals to children during the early pandemic
+                        months included the NSLP, SBP, SSO, SFSP, and CACFP.
+                        This chapter describes findings on use of the nationwide
+                        waivers, meal site characteristics, meal service
+                        methods, and how waivers improved service to children
+                        during the March through September 2020 period.
+                    </p>
+                    <h2 class="content-main-heading2">
+                        Local program operators more frequently used the waivers
+                        for SSO and SFSP than for NSLP, SBP, and CACFP from
+                        March through September 2020
+                    </h2>
+                </div>
+            </section>
+            <section class="content-main">
+                <div class="content-main-callout-container">
+                    <p class="content-main-body">
+                        Consistent with the increased use of SSO and SFSP for
+                        meal service between March and September 2020, local
+                        program operators most frequently used the COVID-19
+                        Child Nutrition nationwide waivers that eased children's
+                        access to meals served through these programs. State
+                        agencies reported that over three-fourths of local
+                        program operators used the
+                        <span class="content-main-body-bold"
+                            >SSO/SFSP Unanticipated School Closure
+                            Operations</span
+                        >
+                        waiver (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=38"
+                            target="_blank"
+                            >E.2</a
+                        >), which made it easier for operators to use these
+                        programs to provide meal service in the early months of
+                        the pandemic. The
+                        <span class="content-main-body-bold"
+                            >Non-congregate</span
+                        >
+                        waiver, which allowed meals to be served and consumed
+                        individually, rather than in group settings, was used by
+                        78% of local program operators that provided meals
+                        through SSO and SFSP, and it was among the most
+                        frequently used waivers across all Child Nutrition
+                        Programs during this time period. More than half of the
+                        local program operators providing meals through SSO and
+                        SFSP also used additional waivers that allowed parents
+                        and guardians to pick up several meals for their
+                        children at one time without requiring that their
+                        children be present at the meal site—the
+                        <span class="content-main-body-bold"
+                            >Parent and Guardian Pick-Up</span
+                        >
+                        waiver and the
+                        <span class="content-main-body-bold"
+                            >Meal Service Time Flexibility</span
+                        >
+                        waivers. These waivers were also commonly used by local
+                        program operators providing meals through other Child
+                        Nutrition Programs during this period.
+                    </p>
+                    <p class="content-main-body">
+                        Local program operators that served meals through NSLP,
+                        SBP, and CACFP used the waivers less frequently compared
+                        to those serving SFSP and SSO meals. Many of the waivers
+                        these local program operators commonly used provided
+                        flexibilities related to program administration, such as
+                        waivers that allowed more time to meet required
+                        deadlines. For example, many SFAs that operated NSLP and
+                        SBP used the
+                        <span class="content-main-body-bold"
+                            >School Wellness Policy</span
+                        >
+                        waiver, which provided an additional year to conduct an
+                        assessment and report on compliance with local school
+                        wellness policy requirements. The
+                        <span class="content-main-body-bold"
+                            >Community Eligibility Provision (CEP)
+                            Deadlines</span
+                        >
+                        waiver was also used by many SFAs. This waiver provided
+                        more time to meet required election and reporting
+                        deadlines for CEP, a policy option that allows high
+                        poverty schools and districts to serve breakfast and
+                        lunch at no cost to all enrolled students. Local program
+                        operators that operated CACFP were the least likely to
+                        use available waivers; among this group, the
+                        <span class="content-main-body-bold"
+                            >CACFP Monitoring for Sponsors</span
+                        >
+                        waiver, which waived certain monitoring requirements for
+                        CACFP sponsoring organizations, was the most frequently
+                        used (Appendix Tables
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=37"
+                            target="_blank"
+                            >E.1</a
+                        >
+                        and
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=38"
+                            target="_blank"
+                            >E.2</a
+                        >).
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=35"
+                            target="_blank"
+                            >Appendix E</a
+                        >
+                        describes the use and the impact of waivers related to
+                        program administration in all of the Child Nutrition
+                        Programs.
+                    </p>
+                    <h2 class="content-main-heading2">
+                        Because of COVID-19, meal service generally moved
+                        outside of school and daycare buildings during
+                        March–September 2020
+                    </h2>
+                    <p class="content-main-body">
+                        As school and daycare buildings closed in response to
+                        the public health emergency, meal service generally
+                        moved outside of those buildings during the March
+                        through September 2020 period. State agencies reported
+                        that local program operators most frequently established
+                        sites in locations that were near children's homes or in
+                        locations where more children participated in Child
+                        Nutrition Programs. State agencies also reported that
+                        many local program operators continued offering meals at
+                        all sites within the community, such as SFAs that
+                        offered meals to be picked up at all of the schools they
+                        served during the school year (Appendix Tables
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=40"
+                            target="_blank"
+                            >E.3</a
+                        >,
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=41"
+                            target="_blank"
+                            >E.4</a
+                        >, and
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=42"
+                            target="_blank"
+                            >E.5</a
+                        >).
+                        <span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigIV1)"
+                            >Figure IV.1</span
+                        >
+                        shows the percentage of State agencies reporting that
+                        the majority of local program operators providing meals
+                        during this time period established meal sites with
+                        certain characteristics. The range shown for each
+                        characteristic reflects variation across local program
+                        operator types, including SFAs operating NSLP, SBP, or
+                        SSO; sponsors operating SFSP; and institutions operating
+                        CACFP.
+                    </p>
+                </div>
+                <div class="content-main-callout-wrapper">
+                    <mat-card>
+                        <div class="content-chart-title-wrapper">
+                            <img
+                                src="../../assets/images/meal-service-01.svg"
+                            />
+                            <div class="content-chart-title-category-wrapper">
+                                <p class="content-chart-title-category">
+                                    Meal Service
+                                </p>
+                                <p class="content-chart-title-category">
+                                    Operations
+                                </p>
+                            </div>
+                        </div>
+                        <p class="content-chart-title">Most used waivers</p>
+                        <h4 class="content-chart-heading">
+                            SSO/SFSP Unanticipated School Closure Operations
+                        </h4>
+                        <p class="content-main-callout-body">
+                            Allowed local program operators to continue
+                            operating SSO and SFSP under unanticipated school
+                            closure requirements in May and June 2020 without
+                            meeting the administrative requirements for
+                            operating these programs in the summer.
+                        </p>
+                        <h4 class="content-chart-heading">Non-congregate</h4>
+                        <p class="content-main-callout-body">
+                            Allowed meals to be served and consumed in non-group
+                            settings.
+                        </p>
+                        <h4 class="content-chart-heading">
+                            Parent and Guardian Pick-Up
+                        </h4>
+                        <p class="content-main-callout-body">
+                            Allowed parents and guardians to pick-up meals and
+                            bring them home to their children.
+                        </p>
+                        <h4 class="content-chart-heading">
+                            Meal Service Time Flexibility
+                        </h4>
+                        <p class="content-main-callout-body">
+                            Allowed meals to be served to kids outside
+                            traditional times to maximize flexibility for meal
+                            pick-up.
+                        </p>
+                    </mat-card>
+                </div>
+                <div #FigIV1 class="content-chart-main-container">
+                    <mat-card>
+                        <div class="content-chart-title-wrapper">
+                            <img
+                                src="../../assets/images/meal-service-01.svg"
+                            />
+                            <div class="content-chart-title-category-wrapper">
+                                <p class="content-chart-title-category">
+                                    Meal Service
+                                </p>
+                                <p class="content-chart-title-category">
+                                    Delivery Methods
+                                </p>
+                            </div>
+                        </div>
+                        <h2 class="content-chart-title">
+                            <span class="content-main-body-bold"
+                                >Figure IV.1.</span
+                            >
+                            Percentage of State agencies reporting that the
+                            majority of local program operators established meal
+                            sites with certain characteristics, March–September
+                            2020
+                        </h2>
+                        <div class="chart-menu-wrapper">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Programs</mat-label>
+                                <mat-select [formControl]="sitesProgram">
+                                    <mat-select-trigger>
+                                        {{ sitesProgram.value }}
+                                    </mat-select-trigger>
+                                    <mat-option
+                                        *ngFor="let program of sitesProgramList"
+                                        [value]="program"
+                                        (onSelectionChange)="
+                                            sitesFilters($event)
+                                        "
+                                        >{{ program }}</mat-option
+                                    >
+                                </mat-select>
+                            </mat-form-field>
+                            <div>
+                                <p class="content-chart-legend-item-label">
+                                    View as chart or table
+                                </p>
+                                <mat-slide-toggle
+                                    (change)="sitesToggle($event)"
+                                ></mat-slide-toggle>
+                            </div>
+                            <!-- </mat-card-actions> -->
+                        </div>
+                        <div class="content-chart-span">
+                            <app-meal-sites
+                                [chartView]="sitesView"
+                                [selectedProgram]="sitesFilter"
+                                *ngIf="this.sitesView === false"
+                            ></app-meal-sites>
+                            <app-meal-sites-table
+                                [chartView]="sitesView"
+                                [selectedProgram]="sitesFilter"
+                                *ngIf="this.sitesView === true"
+                            ></app-meal-sites-table>
+                        </div>
+                        <p class="chart-source">
+                            School Meals Operations Study, State Agency Child
+                            Nutrition Director COVID-19 Waiver Collection School
+                            Year 2020–2021.
+                        </p>
+                        <p class="chart-note">
+                            The figure includes the percentage of State agencies
+                            reporting that about half, more than half, or all
+                            local program operators established meal sites with
+                            each characteristic from March through September
+                            2020. The bars indicate the extent of variation in
+                            State agency responses by type of local program
+                            operator, including SFAs operating NSLP, SBP, or
+                            SSO; sponsors operating SFSP; and institutions
+                            operating CACFP.
+                        </p>
+                    </mat-card>
+                </div>
+
+                <div class="content-main-container">
+                    <p class="content-main-body">
+                        Because many sites operating from March through
+                        September 2020 provided SSO or SFSP meals, meals served
+                        at these sites were provided to all children for free.
+                        SSO and SFSP meals may be served at open or closed
+                        sites. Open sites serve meals to all children from the
+                        community on a first-come, first-served basis, while
+                        closed sites serve meals to children enrolled in a
+                        program at the site. The majority of SFSP and SSO sites
+                        that operated between March and September 2020 operated
+                        as open sites; closed sites made up only 20 percent of
+                        sites operating during that time period (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=43"
+                            target="_blank"
+                            >E.6</a
+                        >).
+                    </p>
+                    <p class="content-main-body">
+                        The high proportion of open sites during this period was
+                        likely related, in part, to local program operators' use
+                        of the
+                        <span class="content-main-body-bold"
+                            >SFSP/SSO Area Eligibility</span
+                        >
+                        waiver, which provided flexibility for establishing open
+                        sites (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=38"
+                            target="_blank"
+                            >E.2</a
+                        >). Under Federal rules, open sites are allowed to
+                        operate in an area where at least half of the children
+                        are eligible for free or reduced-price school meals, or
+                        when households have income at or below 185 percent of
+                        Federal poverty guidelines. However, the
+                        <span class="content-main-body-bold"
+                            >SFSP/SSO Area Eligibility</span
+                        >
+                        waiver provided flexibility with this requirement and
+                        indicated that open sites should be targeted to children
+                        who were previously eligible or newly eligible for Child
+                        Nutrition Program benefits due to the economic impacts
+                        of COVID-19. State agencies reported that the methods
+                        used to identify new sites varied across SFAs that used
+                        the waiver for SSO and sponsors that used it for SFSP.
+                        For example, SFAs most frequently identified new SSO
+                        area eligible sites as those that had been area eligible
+                        in prior years, while sponsors most frequently targeted
+                        near-eligible sites as new SFSP area eligible sites,
+                        such as those in areas where 40 percent of children,
+                        instead of the standard 50 percent, were eligible for
+                        free or reduced-price meals (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=43"
+                            target="_blank"
+                            >E.7</a
+                        >).
+                    </p>
+                    <h2 class="content-main-heading2">
+                        Local program operators used a variety of new and
+                        alternative meal delivery methods and options to serve
+                        children from March through September 2020
+                    </h2>
+                </div>
+                <div class="content-main-container">
+                    <p class="content-main-body">
+                        The start of the pandemic, and subsequent shift to
+                        remote learning in many areas in spring 2020, forced
+                        local program operators to adjust how they provided
+                        meals to children who were no longer routinely being
+                        educated in school buildings or receiving care in child
+                        care centers and family day care homes. Through use of
+                        the COVID-19 Child Nutrition nationwide waivers, various
+                        alternative methods were used to distribute meals to
+                        children. The majority of State agencies reported that
+                        more than half of their local program operators
+                        implemented a curbside meal pick-up or drive through
+                        service for families to obtain children's meals during
+                        the March through September 2020 period, and that this
+                        was the most effective method for providing the greatest
+                        number of meals to the greatest number of children. Over
+                        40 percent of State agencies also reported that more
+                        than half of SFAs operating NSLP, SBP, or SSO, and
+                        sponsors operating SFSP, offered walk-up sites at
+                        schools, child care centers, or other buildings, which
+                        was one of the least costly meal service methods used
+                        during this period. A smaller percentage of State
+                        agencies reported that walk-up sites were offered by the
+                        majority of CACFP institutions. State agencies also
+                        reported that mobile sites at which a bus or van
+                        delivered meals at pre-set times, and meal delivery
+                        through stops at individual homes, were the most costly
+                        meal delivery methods, and were less frequently used by
+                        local program operators (Appendix Tables
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=44"
+                            target="_blank"
+                            >E.8</a
+                        >,
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=45"
+                            target="_blank"
+                            >E.9</a
+                        >, and
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=46"
+                            target="_blank"
+                            >E.10</a
+                        >). Also, through use of the waivers, local program
+                        operators were able to provide multiple meals at one
+                        time to those picking up children's meals. About 30
+                        percent of State agencies reported that more than half
+                        of SFAs operating NSLP, SBP, or SSO, and sponsors
+                        operating SFSP, provided two to three days' worth of
+                        meals at one time. About one fourth of State agencies
+                        also reported that more than half of these local program
+                        operators provided a full week of meals at one-time.
+                        State agencies reported both of these approaches as
+                        among the most effective methods for serving the
+                        greatest number of meals to the greatest number of
+                        children. However, few State agencies reported that the
+                        majority of institutions operating CACFP provided
+                        multiple meals at one time. In addition, State agencies
+                        reported that local program operators less frequently
+                        provided weekend meals, bulk food packages
+                        <span
+                            class="content-main-body-footnote"
+                            matTooltipClass="tooltip"
+                            matTooltip="Bulk food packages are food packages that contain one or more items that could be used for multiple meals or portion sizes. For example, a quart of milk provides four one-cup servings."
+                            aria-label="Bulk food packages are food packages that contain one or more items that could be used for multiple meals or portion sizes. For example, a quart of milk provides four one-cup servings."
+                            matTooltipPosition="right"
+                        >
+                            &#8311;</span
+                        >, or shelf-stable meals (Appendix Tables
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=44"
+                            target="_blank"
+                            >E.8</a
+                        >
+                        and
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=45"
+                            target="_blank"
+                            >E.9</a
+                        >).
+                    </p>
+                    <p class="content-main-body">
+                        Local program operators must report the number of meals
+                        they serve to children in each Child Nutrition Program
+                        to their State agency in order to receive meal
+                        reimbursements from USDA. During the March through
+                        September 2020 period, local program operators most
+                        frequently used paper rosters to count meals served.
+                        Fewer used a standard point of service system, such as
+                        the terminals typically used in a cafeteria; clickers;
+                        or mobile technology, like tablets or laptops, during
+                        this time period (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=44"
+                            target="_blank"
+                            >E.8</a
+                        >).
+                    </p>
+                    <p class="content-main-body">
+                        In traditional meal service, a child who is present at a
+                        school or site receives a meal; however, during the
+                        March through September 2020 period, the
+                        <span class="content-main-body-bold"
+                            >Parent and Guardian Pick-Up</span
+                        >
+                        waiver allowed parents to pick up meals without their
+                        children present in order to minimize potential exposure
+                        to COVID-19. Local program operators that used this
+                        waiver were required to ensure that duplicate meals were
+                        not provided to any child and that meals were
+                        distributed only to parents and guardians of eligible
+                        children. To ensure duplicate meals were not
+                        distributed, the majority of local program operators
+                        notified parents and guardians picking up meals that
+                        children were not eligible to receive duplicate meals
+                        and requested parents and guardians provide their
+                        children's names or other identifying information when
+                        picking up meals. There was some variation in how local
+                        program operators for different Child Nutrition Programs
+                        ensured meals were only distributed to eligible
+                        children. For instance, SFAs providing meals through
+                        NSLP, SBP, or SSO most frequently requested that parents
+                        or guardians provide the number of children for whom
+                        they were picking up meals. SFSP sponsors and CACFP
+                        institutions used this approach with slightly less
+                        frequency; they also posted signage to indicate to
+                        parents and guardians who was eligible to pick up and
+                        receive meals. Some SFSP sponsors and CACFP institutions
+                        also requested children's information, like names, ages,
+                        dates of birth, or grade levels, from parents and
+                        guardians when they picked up their children's meals
+                        (Appendix Tables
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=47"
+                            target="_blank"
+                            >E.11</a
+                        >
+                        and
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=49"
+                            target="_blank"
+                            >E.12</a
+                        >).
+                    </p>
+                    <p class="content-main-body">
+                        Under Federal rules, local program operators must serve
+                        meals that meet certain requirements, such as those
+                        related to meal components. For example, lunches served
+                        through SSO have to include servings of milk, grains,
+                        vegetables, fruit, and meat or meat alternates that meet
+                        certain nutritional and portion size requirements.
+                        However, COVID-19 and subsequent supply chain
+                        disruptions affected the availability of certain foods
+                        for meals. The
+                        <span class="content-main-body-bold"
+                            >Meal Pattern Flexibility</span
+                        >
+                        waiver, which was used by local program operators
+                        operating each program in over two-thirds of States from
+                        March through September 2020, allowed local program
+                        operators to modify meal components served when needed.
+                        This waiver was most used among SFAs, with nearly half
+                        of those providing meal service during this time using
+                        it for SSO. In contrast, few sponsors used the waiver
+                        for SFSP, which is not surprising; while the SFSP meal
+                        pattern is similar to the SSO pattern, it includes fewer
+                        requirements that must be met for meals to be
+                        reimbursable (Appendix Tables
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=37"
+                            target="_blank"
+                            >E.1</a
+                        >
+                        and
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=38"
+                            target="_blank"
+                            >E.2</a
+                        >).
+                    </p>
+                    <p class="content-main-body">
+                        <span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigIV2)"
+                            >Figure IV.2.</span
+                        >
+                        shows the percentage of State agencies reporting that
+                        local program operators used the
+                        <span class="content-main-body-bold"
+                            >Meal Pattern Flexibility</span
+                        >
+                        waiver to waive meal component requirements in each
+                        Child Nutrition Program. State agencies most frequently
+                        reported that local program operators waived milk
+                        requirements, with half of State agencies reporting that
+                        sponsors using the waiver waived milk requirements for
+                        SFSP meals, and over one-third of State agencies
+                        reporting that SFAs did so for SSO meals. This was
+                        followed by grains and vegetables; about one-third of
+                        State agencies reported that local program operators
+                        using the waiver waived the grains and vegetables
+                        requirements for SFSP and SSO meals. Fewer local program
+                        operators waived requirements for fruits and meat or
+                        meat alternatives. For NSLP and SSO meals, local program
+                        operators are also required to serve certain amounts of
+                        specific vegetable subgroups—dark green, red/orange,
+                        starchy, legumes, and other vegetables—to meet the
+                        weekly meal pattern requirements. State agencies most
+                        frequently reported that local program operators using
+                        the Meal Pattern Flexibility waiver waived requirements
+                        for legumes, and dark green and starchy vegetables;
+                        however, less than 20 percent of State agencies reported
+                        that local program operators waived requirements for any
+                        specific vegetable subgroup. Across all Child Nutrition
+                        Programs, most State agencies reported that less than
+                        half of local program operators used the waiver for
+                        multiple food components (Appendix Tables
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=50"
+                            target="_blank"
+                            >E.13</a
+                        >
+                        and
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=51"
+                            target="_blank"
+                            >E.14</a
+                        >).
+                    </p>
+                </div>
+                <div class="content-main-callout-wrapper">
+                    <mat-card>
+                        <div class="content-chart-title-wrapper">
+                            <img
+                                src="../../assets/images/meal-service-01.svg"
+                            />
+                            <div class="content-chart-title-category-wrapper">
+                                <p class="content-chart-title-category">
+                                    Meal Service
+                                </p>
+                                <p class="content-chart-title-category">
+                                    Delivery Methods
+                                </p>
+                            </div>
+                        </div>
+                        <p class="content-chart-title">
+                            Most used meal delivery methods
+                        </p>
+                        <ul class="content-main-callout-list">
+                            <li class="content-main-callout-list-item-check">
+                                <span
+                                    >Curbside pick-up/ drive through
+                                    service</span
+                                >
+                            </li>
+                            <li class="content-main-callout-list-item">
+                                <span
+                                    >Walk-up sites at schools, centers, or other
+                                    buildings</span
+                                >
+                            </li>
+                        </ul>
+                        <div class="content-chart-title-wrapper">
+                            <img
+                                src="../../assets/images/meal-service-01.svg"
+                            />
+                            <div class="content-chart-title-category-wrapper">
+                                <p class="content-chart-title-category">
+                                    Meal Service
+                                </p>
+                                <p class="content-chart-title-category">
+                                    Meal Options
+                                </p>
+                            </div>
+                        </div>
+                        <p class="content-chart-title">
+                            Most used alternative meal options
+                        </p>
+                        <ul class="content-main-callout-list">
+                            <li class="content-main-callout-list-item-check">
+                                <span
+                                    >Two to three days of meals at one
+                                    time</span
+                                >
+                            </li>
+                            <li class="content-main-callout-list-item-check">
+                                <span
+                                    >Full week (five days) of meals at one
+                                    time</span
+                                >
+                            </li>
+                        </ul>
+                        <p class="content-main-callout-note">
+                            Most effective methods for providing the greatest
+                            number of meals to the greatest number of children,
+                            reported by State agencies
+                        </p>
+                    </mat-card>
+                </div>
+                <div #FigIV2 class="content-chart-main-container">
+                    <mat-card>
+                        <div class="content-chart-title-wrapper">
+                            <img
+                                src="../../assets/images/meal-service-01.svg"
+                            />
+                            <div class="content-chart-title-category-wrapper">
+                                <p class="content-chart-title-category">
+                                    Meal Service
+                                </p>
+                                <p class="content-chart-title-category">
+                                    Meal Options
+                                </p>
+                            </div>
+                        </div>
+                        <h2 class="content-chart-title">
+                            <span class="content-main-body-bold"
+                                >Figure IV.2.</span
+                            >
+                            Percentage of State agencies in which local program
+                            operators used the Meal Pattern Flexibility waiver
+                            to waive meal component requirements in each Child
+                            Nutrition Program, March–September 2020
+                        </h2>
+                        <div class="chart-menu-wrapper">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Programs</mat-label>
+                                <mat-select [formControl]="patternsProgram">
+                                    <mat-select-trigger>
+                                        {{ patternsProgram.value }}
+                                    </mat-select-trigger>
+                                    <mat-option
+                                        *ngFor="
+                                            let program of patternsProgramList
+                                        "
+                                        [value]="program"
+                                        (onSelectionChange)="
+                                            patternsFilters($event)
+                                        "
+                                        >{{ program }}</mat-option
+                                    >
+                                </mat-select>
+                            </mat-form-field>
+                            <div>
+                                <p class="content-chart-legend-item-label">
+                                    View as chart or table
+                                </p>
+                                <mat-slide-toggle
+                                    (change)="patternsToggle($event)"
+                                ></mat-slide-toggle>
+                            </div>
+                            <!-- </mat-card-actions> -->
+                        </div>
+                        <div class="content-chart-span">
+                            <app-meal-patterns
+                                [chartView]="patternsView"
+                                [selectedProgram]="patternsFilter"
+                                *ngIf="this.patternsView === false"
+                            ></app-meal-patterns>
+                            <app-meal-patterns-table
+                                [chartView]="patternsView"
+                                [selectedProgram]="patternsFilter"
+                                *ngIf="this.patternsView === true"
+                            ></app-meal-patterns-table>
+                        </div>
+                        <p class="chart-source">
+                            School Meals Operations Study, State Agency Child
+                            Nutrition Director COVID-19 Waiver Collection School
+                            Year 2020–2021.
+                        </p>
+                        <p class="chart-note">
+                            The figure includes the percentage of State agencies
+                            reporting that local program operators using the
+                            Meal Pattern Flexibility waiver waived meal
+                            components in each Child Nutrition Program. The bars
+                            indicate the extent of variation in State agency
+                            responses by Program, including NSLP, SBP, SSO,
+                            SFSP, and CACFP.
+                        </p>
+                    </mat-card>
+                </div>
+
+                <div class="content-main-container">
+                    <h2 class="content-main-heading2">
+                        State agencies consistently reported that use of the
+                        COVID-19 Child Nutrition nationwide waivers improved
+                        services to children from March through September 2020
+                    </h2>
+                    <p class="content-main-body">
+                        State agencies were required by statute to report on
+                        whether and how use of the COVID-19 Child Nutrition
+                        nationwide waivers improved services to children. Across
+                        all waivers that eased children's access to meals from
+                        March through September 2020, and for all programs which
+                        used them, State agencies overwhelmingly reported that
+                        the waivers improved services to children, and that they
+                        did so in multiple ways. For example, across Child
+                        Nutrition programs, most State agencies reported the
+                        access-focused waivers
+                        <span
+                            class="content-main-body-footnote"
+                            matTooltipClass="tooltip"
+                            matTooltip="Waivers issues in an effort to ease children's access to meals. These waivers include Meal Service Time Flexibility, Non-congregate, Afterschool Activity Requirements in NSLP/CACFP, Meal Pattern Flexibility, Parent Pick-up, SFSP Offer vs. Serve Flexibilities, SFSP/SSO Meal Service Time, and SFSP/SSO Area Eligibility."
+                            aria-label="Waivers issues in an effort to ease children's access to meals. These waivers include Meal Service Time Flexibility, Non-congregate, Afterschool Activity Requirements in NSLP/CACFP, Meal Pattern Flexibility, Parent Pick-up, SFSP Offer vs. Serve Flexibilities, SFSP/SSO Meal Service Time, and SFSP/SSO Area Eligibility."
+                            matTooltipPosition="right"
+                            >&#8312;</span
+                        >
+                        improved services to children by reducing barriers to
+                        receiving meals, allowing pick-up of multiple meals at
+                        one time, and improving safety for children. About
+                        two-thirds of State agencies also said the waivers
+                        increased alternative delivery methods and increased
+                        participation among children (Appendix Table
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=52"
+                            target="_blank"
+                            >E.15</a
+                        >).
+                        <span
+                            class="content-main-reference"
+                            (click)="onNavLinkClicked($event, FigIV3)"
+                            >Figure IV.3</span
+                        >
+                        shows the percentage of State agencies reporting that
+                        the access-focused waivers improved services to children
+                        in certain ways.
+                    </p>
+                </div>
+                <div #FigIV3 class="content-chart-main-container">
+                    <mat-card>
+                        <div class="content-chart-title-wrapper">
+                            <img
+                                src="../../assets/images/meal-service-01.svg"
+                            />
+                            <div class="content-chart-title-category-wrapper">
+                                <p class="content-chart-title-category">
+                                    Meal Service
+                                </p>
+                                <p class="content-chart-title-category">
+                                    Meal Options
+                                </p>
+                            </div>
+                        </div>
+                        <h2 class="content-chart-title">
+                            <span class="content-main-body-bold"
+                                >Figure IV.3.</span
+                            >
+                            Percentage of State agencies reporting that
+                            access-focused waivers improved services to children
+                            in certain ways, March–September 2020
+                        </h2>
+                        <div class="chart-menu-wrapper">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Programs</mat-label>
+                                <mat-select [formControl]="improvedProgram">
+                                    <mat-select-trigger>
+                                        {{ improvedProgram.value }}
+                                    </mat-select-trigger>
+                                    <mat-option
+                                        *ngFor="
+                                            let program of improvedProgramList
+                                        "
+                                        [value]="program"
+                                        (onSelectionChange)="
+                                            improvedFilters($event)
+                                        "
+                                        >{{ program }}</mat-option
+                                    >
+                                </mat-select>
+                            </mat-form-field>
+                            <div>
+                                <p class="content-chart-legend-item-label">
+                                    View as chart or table
+                                </p>
+                                <mat-slide-toggle
+                                    (change)="improvedToggle($event)"
+                                ></mat-slide-toggle>
+                            </div>
+                            <!-- </mat-card-actions> -->
+                        </div>
+                        <div class="content-chart-span">
+                            <app-improved-services
+                                [chartView]="improvedView"
+                                [selectedProgram]="improvedFilter"
+                                *ngIf="this.improvedView === false"
+                            ></app-improved-services>
+                            <app-improved-services-table
+                                [chartView]="improvedView"
+                                [selectedProgram]="improvedFilter"
+                                *ngIf="this.improvedView === true"
+                            ></app-improved-services-table>
+                        </div>
+                        <p class="chart-source">
+                            School Meals Operations Study, State Agency Child
+                            Nutrition Director COVID-19 Waiver Collection School
+                            Year 2020–2021.
+                        </p>
+                        <p class="chart-note">
+                            The figure includes the average percentage of State
+                            agencies, across all Child Nutrition COVID-19
+                            nationwide waivers used from March through September
+                            2020 to ease access to meals, that reported the
+                            waivers improved services to children in certain
+                            ways. These waivers include Meal Service Time
+                            Flexibility, Non-congregate, Afterschool Activity
+                            Requirements in NSLP/CACFP, Meal Pattern
+                            Flexibility, Parent Pick-up, SFSP Offer vs. Serve
+                            Flexibilities, SFSP/SSO Meal Service Time, and
+                            SFSP/SSO Area Eligibility. The bars indicate the
+                            extent of variation in State agency responses by
+                            Program, including NSLP, SBP, SSO, SFSP, and CACFP.
+                        </p>
+                    </mat-card>
+                </div>
+
+                <div class="content-main-container">
+                    <p class="content-main-body">
+                        Certain waivers led to specific improvements related to
+                        the purpose of the waiver. For example, most State
+                        agencies that used the
+                        <span class="content-main-body-bold"
+                            >Meal Pattern Flexibility</span
+                        >
+                        waiver reported that it allowed service of available
+                        foods when supply issues occurred. Similarly, nearly all
+                        State agencies that used the
+                        <span class="content-main-body-bold"
+                            >SFSP/SSO Area Eligibility</span
+                        >
+                        waiver reported that it increased the number of meal
+                        sites and resulted in greater geographic distribution of
+                        sites, outcomes which are consistent with the goals of
+                        the waiver. State agencies also reported that the Area
+                        Eligibility waiver reduced barriers to receiving meals
+                        and increased participation among children.
+                    </p>
+                    <p class="content-main-body">
+                        State agencies in which local program operators used the
+                        <span class="content-main-body-bold"
+                            >Non-congregate, Parent and Guardian Pick-Up,
+                            Afterschool Activity Requirements in
+                            NSLP/CACFP</span
+                        >, and
+                        <span class="content-main-body-bold"
+                            >Meal Service Time Flexibility</span
+                        >
+                        waivers reported that these waivers improved safety for
+                        children by not requiring congregate feeding or meal
+                        pick-up and reduced barriers to children receiving
+                        meals. State agencies reported that the
+                        <span class="content-main-body-bold"
+                            >Non-congregate</span
+                        >
+                        and
+                        <span class="content-main-body-bold"
+                            >Meal Service Time Flexibility</span
+                        >
+                        waivers also allowed pick-up of multiple meals at one
+                        time, and, for SSO, SFSP, and CACFP specifically,
+                        increased children's participation in the programs and
+                        increased the availability of alternative meal delivery
+                        methods (Appendix Tables
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=53"
+                            target="_blank"
+                            >E.16</a
+                        >,
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=54"
+                            target="_blank"
+                            >E.17</a
+                        >,
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=55"
+                            target="_blank"
+                            >E.18</a
+                        >,
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=56"
+                            target="_blank"
+                            >E.19</a
+                        >, and
+                        <a
+                            class="content-main-reference-external"
+                            href="../assets/data/SMO-Y1-appendix.pdf#page=58"
+                            target="_blank"
+                            >E.20</a
+                        >).
+                    </p>
+                </div>
+            </section>
+            <section class="content-main">
+                <div class="content-main-container">
+                    <h3 #Ch5 class="content-main-subheading">Chapter V</h3>
+                    <h1 class="content-main-heading1">
+                        Overview of the Next Study in the Series
+                    </h1>
+                    <p class="content-main-body">
+                        The COVID-19 pandemic public health emergency has
+                        continued to affect Child Nutrition Program operations,
+                        and as a result, how the programs have adjusted during
+                        the pandemic will continue to be a central focus. The
+                        next report in this study series is expected to be
+                        released in September 2023 and will present information
+                        on data collection conducted between December 2021 and
+                        May 2022. This data collection focused on gathering
+                        information about Child Nutrition Program operations
+                        during SY 2020-2021 and summer 2021. The study also
+                        continued to collect statutorily required information on
+                        the COVID-19 Child Nutrition nationwide waivers approved
+                        for use during that period. While some waivers were
+                        authorized for use for the first time during that
+                        period, many of the waivers authorized for use during
+                        the March through September 2020 period were extended
+                        into SY 2020-2021 and summer 2021. As a result, the
+                        second year of this study collected statutorily required
+                        data on both the newly authorized waivers and waiver
+                        extensions, as well as the additional requirements in
+                        place for certain waivers.
+                    </p>
+                    <p class="content-main-body">
+                        The second year of data collection for this study again
+                        involved obtaining survey and administrative data from
+                        the 67 State agencies in the 50 States, District of
+                        Columbia, Guam, Puerto Rico, and the U.S. Virgin Islands
+                        that administer NSLP, SBP, SSO, SFSP, and CACFP. The
+                        survey of State agencies gathered information to address
+                        the reporting requirements for the COVID-19 Child
+                        Nutrition nationwide waivers, as well as information on
+                        State agencies' operational and financial challenges and
+                        their administration of the Child Nutrition Emergency
+                        Operational Costs Reimbursement Programs. These Programs
+                        provided payments to local program operators whose
+                        revenues declined or were temporarily interrupted during
+                        the early months of the pandemic due to COVID-19. The
+                        administrative data collection gathered data on program
+                        participation and meals served in the Child Nutrition
+                        Programs during SY 2020-2021 and summer 2021.
+                    </p>
+                    <p class="content-main-body">
+                        The second year of this study also included a survey of
+                        a nationally representative sample of SFAs. The survey
+                        gathered information on Child Nutrition Program
+                        operations and challenges during SYs 2020-2021 and
+                        2021-2022, use of COVID-19 Child Nutrition nationwide
+                        waivers, and the financial impacts of the COVID-19
+                        pandemic.
+                    </p>
+                </div>
+            </section>
+            <section class="content-main">
+                <div class="content-main-container">
+                    <h1 #Refs class="content-main-heading1">
+                        References and Citations
+                    </h1>
+
+                    <div class="content-logo-wrapper">
+                        <img
+                            class="content-title-logo"
+                            src="../assets/images/fns-black-lockup.svg"
+                        />
+                        <img
+                            class="content-title-logo"
+                            src="../assets/images/Registered_Horz_Tag_black.svg"
+                        />
+                    </div>
+                    <h1 class="content-title-back">
+                        Game Changer
+                    </h1>
+                    <h2 class="content-subtitle-back">
+                        How FNS Rewrote the School Lunch Playbook During <br>the COVID-19 Pandemic
+                        <span style="color: '#f1b51c'">|</span> Year 1 Report
+                    </h2>
+                    <p class="content-title-citation-bold-back">May 23, 2023</p>
+                    <p class="content-title-citation-back">
+                        Veronica Severn, Liana Washburn, Rachel Frisk, and Kevin
+                        Conway
+                    </p>
+                    <div class="content-main-flex-wrap-row">
+                        <div class="content-title-submission">
+                            <p class="content-title-disclaimer-header">
+                                Submitted to:
+                            </p>
+                            <p class="content-title-disclaimer">
+                                Food and Nutrition Service<br />
+                                U.S. Department of Agriculture<br />
+                                1320 Braddock Place<br />
+                                Alexandria, VA 22314<br />
+                                Project Officers: Conor McGovern<br />and Darcy
+                                Güngör<br />
+                                Contract Number: 12319819F0162
+                            </p>
+                        </div>
+                        <div class="content-title-submission">
+                            <p class="content-title-disclaimer-header">
+                                Submitted by:
+                            </p>
+                            <p class="content-title-disclaimer">
+                                Mathematica<br />
+                                P.O. Box 2393<br />
+                                Princeton, NJ 08543-2393<br />
+                                Phone: (609) 799-3535<br />
+                                Fax: (609) 799-0005<br />
+                                Project Director: Kevin Conway<br />
+                                Deputy Project Director: Liana Washburn<br />
+                                Reference Number: 50926
+                            </p>
+                        </div>
+                    </div>
+                    <h3 class="content-main-heading3">References</h3>
+                    <p class="content-title-disclaimer">
+                        Food and Nutrition Service. “COVID-19 Congregate Meal
+                        Waivers & Q&As on Summer Meal Delivery Using Existing
+                        Authority.” 2020a. Available at
+                        <a
+                            href="https://www.fns.usda.gov/sfsp/covid-19/covid-19-meal-delivery"
+                            target="_blank"
+                            >https://www.fns.usda.gov/sfsp/covid-19/covid-19-meal-delivery</a
+                        >. Accessed June 10, 2022.
+                    </p>
+                    <p class="content-title-disclaimer">
+                        Food and Nutrition Service. “Program Information Report
+                        (Keydata) U.S. Summary, FY 2019 - FY 2020.” 2020b.
+                        Washington, DC: U.S. Department of Agriculture, Food and
+                        Nutrition Service, 2020. Data file provided by the Food
+                        and Nutrition Service.
+                    </p>
+                    <h3 class="content-main-heading3">Suggested citation</h3>
+                    <p class="content-title-disclaimer">
+                        Severn, Veronica, Liana Washburn, Rachel Frisk, and
+                        Kevin Conway. (2023). Child Nutrition Program Operations
+                        During the COVID-19 Pandemic, March through September
+                        2020: School Meals Operations Study (SMO) Year 1 Report.
+                        Prepared by Mathematica, Contract No.
+                        12319819A0009/12319819F0162. Alexandria, VA: U.S.
+                        Department of Agriculture, Food and Nutrition Service,
+                        Office of Policy Support.
+                    </p>
+                    <p class="content-title-disclaimer-header">Disclaimer</p>
+                    <p class="content-title-disclaimer">
+                        This research was supported by the U.S. Department of
+                        Agriculture, Food and Nutrition Service. The findings
+                        and conclusions in this publication are those of the
+                        author(s) and should not be construed to represent any
+                        official USDA or U.S. Government determination or
+                        policy.
+                    </p>
+                    <p class="content-title-disclaimer-header">
+                        Non-Discrimination Statement
+                    </p>
+                    <p class="content-title-disclaimer">
+                        In accordance with Federal civil rights law and U.S.
+                        Department of Agriculture (USDA) civil rights
+                        regulations and policies, the USDA, its Agencies,
+                        offices, and employees, and institutions participating
+                        in or administering USDA programs are prohibited from
+                        discriminating based on race, color, national origin,
+                        religion, sex, gender identity (including gender
+                        expression), sexual orientation, disability, age,
+                        marital status, family/parental status, income derived
+                        from a public assistance program, political beliefs, or
+                        reprisal or retaliation for prior civil rights activity,
+                        in any program or activity conducted or funded by USDA
+                        (not all bases apply to all programs). Remedies and
+                        complaint filing deadlines vary by program or incident.
+                    </p>
+                    <p class="content-title-disclaimer">
+                        Persons with disabilities who require alternative means
+                        of communication for program information (e.g., Braille,
+                        large print, audiotape, American Sign Language, etc.)
+                        should contact the responsible Agency or USDA's TARGET
+                        Center at (202) 720-2600 (voice and TTY) or contact USDA
+                        through the Federal Relay Service at (800) 877-8339.
+                        Additionally, program information may be made available
+                        in languages other than English.
+                    </p>
+                    <p class="content-title-disclaimer">
+                        To file a program discrimination complaint, complete the
+                        USDA Program Discrimination Complaint Form, AD-3027,
+                        found online at How to File a Program Discrimination
+                        Complaint and at any USDA office or write a letter
+                        addressed to USDA and provide in the letter all of the
+                        information requested in the form. To request a copy of
+                        the complaint form, call (866) 632-9992. Submit your
+                        completed form or letter to USDA by: (1) mail: U.S.
+                        Department of Agriculture, Office of the Assistant
+                        Secretary for Civil Rights, 1400 Independence Avenue,
+                        SW, Washington, D.C. 20250-9410; (2) fax: (202)
+                        690-7442; or (3) email: program.intake@usda.gov.
+                    </p>
+                    <p class="content-title-disclaimer">
+                        USDA is an equal opportunity provider, employer, and
+                        lender.
+                    </p>
+                </div>
+            </section>
+        </main>
+        <div class="nav-copyright-wrapper">
+            <p class="nav-copyright">
+                <a href="https://www.mathematica.org/" target="_blank"
+                    >Mathematica&#169; Inc.</a
+                >
+            </p>
+        </div>
+        <div class="content-mobile-prompt">
+            <div class="content-mobile-wrapper" style="z-index: 1">
+                <img
+                    class="content-mobile-logo"
+                    style="z-index: 1"
+                    src="../assets/images/usda-logo-white.svg"
+                />
+                <p>This web application is best viewed on a desktop screen</p>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,47 @@
+[   
+    {
+        "NSLP": [
+            {"factor":"Obtaining approval for new sites",
+            "value1":0.20,
+            "value2":0.35
+            },
+            {"factor":"Identifying site locations",
+            "value1":0.24,
+            "value2":0.35
+            },
+            {"factor":"Completing waiver request forms",
+            "value1":0.39,
+            "value2":0.52
+            },
+            {"factor":"Obtaining needed meal delivery equipment",
+            "value1":0.36,
+            "value2":0.57
+            },
+            {"factor":"Obtaining meal packaging",
+            "value1":0.53,
+            "value2":0.63
+            },
+            {"factor":"Establishing new meal delivery methods",
+            "value1":0.65,
+            "value2":0.70
+            },
+            {"factor":"Providing meals during food shortages or supply chain issues",
+            "value1":0.63,
+            "value2":0.71
+            },
+            {"factor":"Redistributing staff to manage meal sites and delivery methods",
+            "value1":0.55,
+            "value2":0.72
+            },
+            {"factor":"Ensuring staff safety and obtaining personal protective equipment",
+            "value1":0.73,
+            "value2":0.80
+            },
+            {"factor":"Continuity of operations during staff absences",
+            "value1":0.70,
+            "value2":0.84
+            }
+
+        ]
+    }
+]   

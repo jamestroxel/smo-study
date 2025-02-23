@@ -1,0 +1,363 @@
+.content-top {
+    // @extend %cover;
+    column-gap: 40px;
+    display: grid;
+    grid-template-columns:
+        40px 1fr 225px 275px 275px
+        225px 1fr 40px;
+    grid-template-rows: [rowMain] 1fr;
+    height: 100%;
+    // margin-bottom: 40px;
+}
+.content-main {
+    // @extend %cover;
+    column-gap: 40px;
+    display: grid;
+    grid-template-columns:
+        40px 1fr 225px 275px 275px
+        225px 1fr 40px;
+}
+.content-main-intro {
+    background-color: rgba($color-grey, 0.04);
+    column-gap: 40px;
+    display: grid;
+    grid-template-columns:
+        40px 1fr 225px 275px 275px
+        225px 1fr 40px;
+    grid-template-rows: [rowMain] 1fr;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+}
+
+.content-main-container {
+    grid-column: 4 / 6;
+    width: 100%;
+}
+.content-main-flex-wrap {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-bottom: 40px;
+}
+.content-main-flex-wrap-row {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 40px;
+}
+.content-main-flex-item {
+    margin: 0px 0px 18px 0px;
+}
+// .content-main-flex-item:first-child {
+//     margin: 0px 0px 0px 0px;
+// }
+.content-main-callout-container {
+    grid-column: 4 / 6;
+    width: 100%;
+}
+.content-main-TOC-heading1 {
+    font-family: $font-montserrat-medium;
+    color: $color-dark-green;
+    font-size: 28px;
+    line-height: 1.25;
+    margin: 32px 0px 16px 0px;
+}
+.content-main-heading1 {
+    font-family: $font-montserrat-medium;
+    color: $color-dark-green;
+    font-size: 28px;
+    line-height: 1.25;
+    margin: 64px 0px 32px 0px;
+}
+.content-main-subheading {
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color: $color-grey;
+    font-family: $font-montserrat-medium;
+    color: $color-grey;
+    font-size: 16px;
+    line-height: 1.25;
+    margin: 82px 0px 32px 0px;
+    padding-top: 16px;
+}
+.content-main-TOC-heading2 {
+    font-family: $font-montserrat-medium;
+    color: black;
+    font-size: 20px;
+    line-height: 1.25;
+    margin: 16px 0px 8px 0px;
+}
+.content-main-heading2 {
+    font-family: $font-montserrat-medium;
+    color: black;
+    font-size: 20px;
+    line-height: 1.25;
+    margin: 32px 0px 16px 0px;
+}
+.content-main-heading3 {
+    font-family: $font-montserrat-semibold;
+    color: $color-dark-green;
+    font-size: 16px;
+    line-height: 1.25;
+    margin: 24px 0px 8px 0px;
+}
+.content-main-heading4 {
+    font-family: $font-montserrat-semibold;
+    color: black;
+    font-size: 16px;
+    line-height: 1.25;
+    margin: 18px 0px 0px 0px;
+}
+.content-main-ui-heading {
+    font-family: $font-montserrat-regular;
+    color: $color-grey;
+    font-size: 14px;
+    // margin: 67px 0px 14px 0px;
+}
+.content-main-body {
+    font-family: $font-montserrat-medium;
+    color: black;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+.content-main-callout-body {
+    font-family: $font-montserrat-medium;
+    color: black;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+.content-main-body-bold {
+    font-family: $font-montserrat-semibold;
+    // font-size: 16px;
+    line-height: 1.5;
+    // margin-bottom: 14px;
+}
+.content-main-reference {
+    color: $color-red;
+    font-family: $font-montserrat-semibold;
+    // font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    text-decoration: underline;
+    // margin-bottom: 14px;
+}
+.content-main-reference-external {
+    color: $color-red;
+    font-family: $font-montserrat-semibold;
+    // font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    // text-decoration: underline;
+    // margin-bottom: 14px;
+}
+.content-main-reference-external::after {
+    // color: black;
+    font-family: 'Material Icons';
+    content: '\e89e';
+    text-decoration: none;
+    // content: url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0);
+    // margin: 4px 0px -4px 0px;
+}
+.content-main-body-list {
+    font-family: $font-montserrat-medium;
+    color: black;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0px 14px 14px 0px;
+}
+.content-main-callout-list {
+    font-family: $font-montserrat-medium;
+    color: black;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0px 0px 12px 0px;
+}
+.content-main-body-list-item::before {
+    content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: $color-dark-green; /* Change the color */
+    font-size: 16px;
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 16px; /* Also needed for space (tweak if needed) */
+    margin-left: -16px; /* Also needed for space (tweak if needed) */
+}
+.content-main-callout-list-item::before {
+    content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: $color-dark-green; /* Change the color */
+    font-size: 14px;
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 14px; /* Also needed for space (tweak if needed) */
+    margin-left: -14px; /* Also needed for space (tweak if needed) */
+}
+.content-main-callout-list-item-check::before {
+    content: '\2713'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: $color-dark-green; /* Change the color */
+    font-size: 14px;
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 14px; /* Also needed for space (tweak if needed) */
+    margin-left: -14px; /* Also needed for space (tweak if needed) */
+}
+.content-main-body-list-item {
+    font-family: $font-montserrat-medium;
+    list-style: none;
+    padding: 0px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0px 0px 9px 16px;
+    span {
+        padding-left: 0px;
+        position: relative;
+        left: 14px;
+        line-height: 1.5;
+    }
+}
+.content-main-callout-list-item {
+    font-family: $font-montserrat-medium;
+    list-style: none;
+    padding: 0px;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0px 14px 9px 14px;
+    span {
+        padding-left: 0px;
+        position: relative;
+        left: 12px;
+        line-height: 1.5;
+    }
+}
+.content-main-callout-list-item-check {
+    font-family: $font-montserrat-medium;
+    list-style: none;
+    padding: 0px;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0px 14px 9px 14px;
+    span {
+        padding-left: 0px;
+        position: relative;
+        left: 12px;
+        line-height: 1.5;
+    }
+}
+.content-main-callout-note::before {
+    content: '\2713 ';
+    color: $color-dark-green;
+    font-family: $font-montserrat-bold;
+    font-size: 12px;
+}
+.content-main-callout-note {
+    color: black;
+    font-family: $font-montserrat-medium;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 12px;
+}
+ol {
+    list-style: none;
+    counter-reset: li;
+}
+li {
+    counter-increment: li;
+}
+.content-main-body-ordered-list-item::before {
+    content: counter(li) '.';
+    color: $color-dark-green; /* Change the color */
+    font-size: 16px;
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 16px; /* Also needed for space (tweak if needed) */
+    margin-left: -14px; /* Also needed for space (tweak if needed) */
+}
+.content-main-body-ordered-list-item {
+    // list-style:decimal;
+    padding: 0px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0px 0px 9px 16px;
+    span {
+        padding-left: 0px;
+        position: relative;
+        left: 16px;
+        line-height: 1.5;
+    }
+}
+.content-main-callout-wrapper {
+    // border-top: 4px;
+    // border-bottom: 4px;
+    // border-color: $color-dark-green;
+    // border-style: solid;
+    grid-column: 6 / 7;
+}
+.content-main-callout-heading {
+    color: $color-dark-green;
+    font-family: $font-montserrat-bold;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 14px 0px 14px 0px;
+}
+.content-main-callout {
+    font-family: $font-montserrat-medium;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+.content-main-quote-container {
+    // @extend %cover;
+    grid-column: 2 / 4;
+    // grid-row: 2 /3;
+    position: sticky;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 64px 0px 32px 0px;
+}
+.content-main-quote::before {
+    content: '"'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: $color-dark-green; /* Change the color */
+    font-size: 28px;
+    font-family: $font-montserrat-bold;
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 20px; /* Also needed for space (tweak if needed) */
+    margin-left: -28px; /* Also needed for space (tweak if needed) */
+}
+.content-main-quote::after {
+    content: ' "'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: $color-dark-green; /* Change the color */
+    font-size: 28px;
+    font-family: $font-montserrat-bold;
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 20px; /* Also needed for space (tweak if needed) */
+    text-align: end;
+    // margin-left: -16px; /* Also needed for space (tweak if needed) */
+}
+.content-main-quote {
+    font-family: $font-montserrat-regular;
+    font-size: 20px;
+    line-height: 2;
+    margin: 48px 0px 32px 0px;
+}
+.content-main-quote-attribution {
+    color: $color-dark-green;
+    font-family: $font-montserrat-medium;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 64px 0px 32px 0px;
+    text-align: end;
+}
+.content-main-body-footnote {
+    background-color: $color-red;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    padding: 2px;
+    border: none;
+    font-size: 10px;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    // text-decoration: underline;
+    // text-decoration-style: double;
+}
