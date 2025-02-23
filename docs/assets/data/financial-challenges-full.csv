@@ -1,0 +1,9 @@
+﻿Factor,Min,Max,MaxDiff,SFAs,SFSP_Sponsors,non_SFA_sponsors,CACFP_Institutions
+Fixed staff-related costs,0.35,0.55,0.2,0.55,0.52,0.35,0.42
+Purchase of equipment for alternate meal service approaches,0.35,0.59,0.24,0.57,0.59,0.43,0.35
+Staff overtime or hazard pay,0.41,0.61,0.2,0.61,0.56,0.41,0.44
+Meal transportation and delivery costs ,0.55,0.74,0.19,0.64,0.74,0.67,0.55
+Increased food costs ,0.65,0.71,0.06,0.71,0.67,0.65,0.71
+Meal packaging costs,0.62,0.75,0.13,0.75,0.72,0.67,0.62
+Purchase of personal protective equipment for staff,0.72,0.79,0.07,0.79,0.72,0.72,0.78
+Decreased Federal reimbursement because of decreased participation,0.52,0.82,0.3,0.79,0.61,0.52,0.82

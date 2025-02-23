@@ -1,0 +1,31 @@
+﻿factor,program,value
+Obtaining approval for new sites,"NSLP, SBP, or SSO",0.29
+Obtaining approval for new sites,SFSP Sponsors,0.28
+Obtaining approval for new sites,non-SFA sponsors,0.35
+Identifying site locations,"NSLP, SBP, or SSO",0.30
+Identifying site locations,SFSP Sponsors,0.30
+Identifying site locations,non-SFA sponsors,0.35
+Completing waiver request forms,"NSLP, SBP, or SSO",0.52
+Completing waiver request forms,SFSP Sponsors,0.43
+Completing waiver request forms,non-SFA sponsors,0.39
+Obtaining needed meal delivery equipment ,"NSLP, SBP, or SSO",0.54
+Obtaining needed meal delivery equipment ,SFSP Sponsors,0.57
+Obtaining needed meal delivery equipment ,non-SFA sponsors,0.52
+Obtaining meal packaging ,"NSLP, SBP, or SSO",0.59
+Obtaining meal packaging ,SFSP Sponsors,0.63
+Obtaining meal packaging ,non-SFA sponsors,0.54
+Establishing new meal delivery methods,"NSLP, SBP, or SSO",0.66
+Establishing new meal delivery methods,SFSP Sponsors,0.70
+Establishing new meal delivery methods,non-SFA sponsors,0.70
+Providing meals during food shortages or supply chain issues,"NSLP, SBP, or SSO",0.66
+Providing meals during food shortages or supply chain issues,SFSP Sponsors,0.67
+Providing meals during food shortages or supply chain issues,non-SFA sponsors,0.63
+Redistributing staff to manage meal sites and delivery methods,"NSLP, SBP, or SSO",0.71
+Redistributing staff to manage meal sites and delivery methods,SFSP Sponsors,0.72
+Redistributing staff to manage meal sites and delivery methods,non-SFA sponsors,0.67
+Ensuring staff safety and obtaining personal protective equipment,"NSLP, SBP, or SSO",0.80
+Ensuring staff safety and obtaining personal protective equipment,SFSP Sponsors,0.76
+Ensuring staff safety and obtaining personal protective equipment,non-SFA sponsors,0.76
+Continuity of operations during staff absences ,"NSLP, SBP, or SSO",0.84
+Continuity of operations during staff absences ,SFSP Sponsors,0.80
+Continuity of operations during staff absences ,non-SFA sponsors,0.70

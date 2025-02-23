@@ -1,0 +1,6 @@
+﻿Factor,Min,Max,MaxDiff,SFAs,SFSP_Sponsors,CACFP_Institutions
+Facilities with larger spaces for meal preparation,0.12,0.47,0.35,0.43,0.47,0.12
+Facilities with central kitchens,0.18,0.48,0.3,0.32,0.48,0.18
+Central locations respective to children's homes,0.26,0.6,0.34,0.55,0.6,0.26
+Locations with higher levels of participation in CN Programs,0.31,0.6,0.29,0.49,0.6,0.31
+Continued offering meals at all sites,0.43,0.58,0.15,0.51,0.58,0.43
